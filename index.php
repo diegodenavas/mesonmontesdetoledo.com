@@ -21,7 +21,7 @@
             <p class="paragraphSectionContainer">Especialistas en clientes que regresan porque saben donde se 
                 encuentra la buena mesa
             </p>
-            <div class="gallery" id="gallery1">
+            <div class="gallery" id="gallery">
                 <img src="/mesonmontesdetoledo.com/public/images/gallery/BarraCaptura.JPG" alt="" class="imgGallery">
                 <img src="/mesonmontesdetoledo.com/public/images/gallery/fachada1.jpeg" alt="" class="imgGallery" id="imgGalleryCenterTop">
                 <img src="/mesonmontesdetoledo.com/public/images/gallery/fachada2.jpeg" alt="" class="imgGallery">
@@ -37,7 +37,7 @@
         <div class="opinions"></div>
 
         <div class="sectionContainer">
-            <div class="gallery"></div>
+            <img src="/mesonmontesdetoledo.com/public/images/gallery/PlatoCaptura.JPG" alt="" class="gallery" id="gallery2img">
             <p class="paragraphSectionContainer">Especialistas en carne de venado a la plancha, cordero al horno,
             chuletas de cordero a la barbacoa y chuletón a los Montes de Toledo.
             </p>
@@ -48,7 +48,13 @@
         <div class="sectionContainer2">
             <p id="paragraphSectionContainer3">Disfruta de la mejor comida en pleno Parque Nacional de Cabañeros.
             </p>
-            <div id="gallery3"></div>
+            <div id="gallery3">
+                <div id="gallery3Container">
+                    <img src="/mesonmontesdetoledo.com/public/images/gallery/rutaLasTorres.jpg" alt="" class="gallery3img">
+                    <img src="/mesonmontesdetoledo.com/public/images/gallery/rutaLasTorres2.jpg" alt="" class="gallery3img">
+                </div>
+                <img src="/mesonmontesdetoledo.com/public/images/gallery/ciervo.jpg" alt="" class="gallery3img zIndexFront">
+            </div>
         </div>
     </section>
 

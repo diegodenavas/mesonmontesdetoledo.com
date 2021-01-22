@@ -45,11 +45,32 @@ section p{
     bottom: -10%;
 }
 
+#gallery2img{
+    box-shadow: black 2px 2px 3px;
+}
+
 #gallery3{
     width: 100%;
-    height: 50px;
+    height: 120px;
     margin-top: 5%;
-    background-color: red;
+    position: relative;
+}
+
+.gallery3img{
+    width: 40%;
+    height: 80px;
+    border: white 1px solid;
+}
+
+.zIndexFront{
+    position: relative;
+    top: -40px;
+}
+
+#gallery3Container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .sectionContainer{
