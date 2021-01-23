@@ -51,6 +51,26 @@ section{
     background-size: cover;
 }
 
+.sectionBackgroundAlternative{
+    background-image: url("/mesonmontesdetoledo.com/public/images/fondo2.jpg")
+}
+
+.sectionTitle{
+    margin: 8% 0;
+    background-color: rgba(219, 199, 164, 0.8);
+    border-top: rgb(191, 168, 128) 1px solid;
+    border-bottom: rgb(191, 168, 128) 1px solid;
+}
+
+.sectionTitle>h2{
+    padding: 5% 7%;  
+}
+
+.centerContainer{
+    width: 90%;
+    margin: auto;
+}
+
 
 
 /*MENU*/

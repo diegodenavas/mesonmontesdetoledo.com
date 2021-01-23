@@ -1,0 +1,22 @@
+#sectionTerraza{
+    background-image: url("/mesonmontesdetoledo.com/public/images/fondoTerraza.jpg");
+}
+
+#terrazaSectionTitle{
+    margin: 8% 0 0 0;
+    background-color: rgba(36, 36, 36, 0.8);
+    border-top: rgb(80, 80, 80) 1px solid;
+    border-bottom: rgb(80, 80, 80) 1px solid;
+    color: white;
+}
+
+.terrazaParagraph{
+    color: white;
+    text-align: center;
+    padding: 10% 0;
+}
+
+.terrazaImages{
+    width: 100%;
+    border: rgb(39, 37, 65) 1px solid;
+}

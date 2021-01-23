@@ -1,0 +1,36 @@
+#contactCard{
+    background-color: #FCFBDF;
+    border-radius: 10px;
+    text-align: center;
+    padding: 5%;
+    box-shadow: rgb(180, 180, 180) 0px 0px 5px 1px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#contactCardTitle{
+    font-size: 1em;
+    padding-bottom: 2%;
+}
+
+.contactCardDescription{
+    font-size: 0.8em;
+    padding: 3% 0;
+}
+
+.telephones{
+    font-size: 0.8em;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    padding-bottom: 2%;
+    text-align: center;
+}
+
+.telephoneIcon{
+    width: 5%;
+    padding-right: 2%;
+}
+
+#XXX{
+    padding: 10%;
+}

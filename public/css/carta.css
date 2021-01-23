@@ -1,0 +1,32 @@
+#menuRestaurantComplete{
+    width: 87%;
+    margin: auto;
+    padding-bottom: 15%;
+}
+
+.menuCategory{
+    display: flex;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 5% 2%;
+    border-bottom :#707070 1px solid;
+}
+
+.categoryCenterContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menuCategoryIcon{
+    width: 15px;
+    height: 15px;
+    padding-right: 2%;
+}
+
+.menuCategoryArrowIcon{
+    width: 12px;
+    height: 12px;
+}

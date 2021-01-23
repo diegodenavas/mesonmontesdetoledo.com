@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/general.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/index.css">
+
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
 </head>
 <body>
-    <?php 
-    require_once(__DIR__ . "/app/src/includes/header.php"); 
-    ?>
+    <?php require_once(ROOT . "/app/src/includes/header.php"); ?>
 
     <section>
-        <?php require_once(__DIR__ . "/app/src/includes/nav.php"); ?>
+        <?php require_once(ROOT . "/app/src/includes/nav.php"); ?>
 
         <div class="sectionContainer">
             <p class="paragraphSectionContainer">Especialistas en clientes que regresan porque saben donde se 
@@ -58,6 +58,6 @@
         </div>
     </section>
 
-    <?php require_once(__DIR__ . "/app/src/includes/footer.php"); ?>
+    <?php require_once(ROOT . "/app/src/includes/footer.php"); ?>
 </body>
 </html>
