@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/general.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/index.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
 </head>
 <body>
@@ -38,8 +40,8 @@
 
         <div class="sectionContainer">
             <img src="/mesonmontesdetoledo.com/public/images/gallery/PlatoCaptura.JPG" alt="" class="gallery" id="gallery2img">
-            <p class="paragraphSectionContainer">Especialistas en carne de venado a la plancha, cordero al horno,
-            chuletas de cordero a la barbacoa y chuletón a los Montes de Toledo.
+            <p class="paragraphSectionContainer">Especialistas en carne de venado, de ternera,
+            y vaca.
             </p>
         </div>
 

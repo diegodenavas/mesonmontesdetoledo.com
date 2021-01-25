@@ -1,3 +1,7 @@
+body{
+    position: relative;
+}
+
 /*HEADER*/
 header{
     height: 200px;
@@ -13,25 +17,33 @@ header>img{
     position: absolute;
 }
 
-header>div{
-    width: 250px;
-    text-align: right;
-    margin-left: 10%;
-    padding-top: 60px;
+#headerInformationContainer{
+    height: 120px;
+    position: absolute;
+    top: 60px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: end;
+}
+
+#headerTitle{
+    text-align: end;
 }
 
 header h1{
-    font-size: 1.5em;
+    font-size: 7vw;
     margin: 0;
 }
 
-header>div>p{
-    margin: 0;
+#subtitle{
+    font-size: 4vw;
 }
 
 #bookings{
-    font-size: 0.7em;
-    margin-top: 25%;
+    font-size: 2.2vw;
+    vertical-align: bottom;
 }
 
 #icono2Header{
@@ -75,15 +87,54 @@ section{
 
 /*MENU*/
 nav{
-    height: 40px;
     background-color: rgba(255 , 255, 255, 0.5);
+}
+
+#menuIcon{
+    height: 50%;
+    margin-left: 10%;
+}
+
+#menuIconContainer{
+    height: 40px;
     display: flex;
     align-items: center;
 }
 
-.menuIcon{
-    height: 50%;
-    margin-left: 10%;
+#menuMobileContainer{
+    height: 100vh;
+    background-color: rgba(255 , 255, 255, 0.5);
+    font-weight: bold;
+    display: none;
+}
+
+.menuMobile>a{
+    padding: 5%;
+    border-bottom: rgb(129, 129, 129) 1px solid;
+    display: flex;
+    align-items: center;
+}
+
+.menuMobile>a>li{
+    width: 100%;
+}
+
+.menuMobile>a:first-child{
+    border-top: rgb(129, 129, 129) 2px solid;
+}
+
+.menuMobile>a:last-child{
+    border-bottom: none;
+}
+
+.arrowIcon{
+    width: 20px;
+    padding: 0 2% 0 6%;
+}
+
+.menuMobile>a:link, .menuMobile>a:visited, .menuMobile>a:active {
+    text-decoration:none;
+    color: black;
 }
 
 
@@ -97,7 +148,7 @@ footer{
 }
 
 footer>p{
-    font-size: 0.5em;
+    font-size: 1.5vw;
     width: 90%;
     margin: auto;
     padding: 1% 0;
@@ -105,4 +156,80 @@ footer>p{
 
 footer>p:first-child{
     border-bottom: grey 2px solid;
+}
+
+
+
+/*MEDIAS QUERIES*/
+@media (min-width: 600px) {
+    header{
+        height: 250px;
+    }
+
+    #headerInformationContainer{
+        height: 165px;
+        left: 50px;
+    }
+}
+
+@media (min-width: 720px) {
+    header{
+        height: 300px;
+    }
+
+    #headerInformationContainer{
+        height: 210px;
+        left: 60px;
+    }
+}
+
+@media (min-width: 920px) {
+    body{
+        width: 70%;
+        margin: auto;
+        background-image: url("/mesonmontesdetoledo.com/public/images/fondo3.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: white 0px 0px 5px;
+    }
+
+    header{
+        height: 350px;
+    }
+
+    #headerInformationContainer{
+        height: 195px;
+        top: 115px;
+    }
+
+    header h1{
+        font-size: 5vw;
+        margin: 0;
+    }
+    
+    #subtitle{
+        font-size: 2vw;
+    }
+
+    #bookings{
+        font-size: 1.5vw;
+    }
+
+    footer>p{
+        font-size: 1.2vw;
+        width: 90%;
+        margin: auto;
+        padding: 1% 0;
+    }
+}
+
+@media (min-width: 1200px){
+    header{
+        height: 400px;
+    }
+
+    #headerInformationContainer{
+        height: 240px;
+    }
 }
