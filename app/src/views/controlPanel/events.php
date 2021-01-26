@@ -7,27 +7,20 @@
 
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/controlPanel.css">
+
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
 </head>
 <body>
-    <header>
-        <div id="headerContainer">
-            <p>Panel de control</p>
-            <h1>MESÓN MONTES DE TOLEDO</h1>
-        </div>
-    </header>
+    <?php require_once(ROOT . "app/src/includes/controlPanelHeader.php"); ?>
 
     <div id="centerContainer">
-        <aside>
-            <nav>
-                <ul id="listContainer">
-                    <li><a href="#">Eventos</a></li>
-                    <li><a href="#">Nuestra carta</a></li>
-                </ul>
-            </nav>
-        </aside>
+        <?php require_once(ROOT . "app/src/includes/controlPanelAside.php"); ?>
 
         <section>
-            
+            <?php 
+            require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); 
+            require_once(ROOT . "app/src/models/User.php");
+            ?>
         </section>
     </div>
 

@@ -3,7 +3,7 @@ $dbConfigure = array('driver' => "mysql",
                      'host' => 'localhost',
                      'user' => 'root',
                      'pass' => '',
-                     'database' => 'mesonmdt_db',
+                     'database' => 'meson_montes_de_toledo',
                      'charset' => 'utf8');
 
 return $dbConfigure;
