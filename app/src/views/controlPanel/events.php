@@ -19,9 +19,22 @@
         <section>
             <?php 
             require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); 
-            require_once(ROOT . "app/src/models/User.php");
+            require_once(ROOT . "app/src/models/Event.php");
+
+            $event = new Event();
+            $resulset = $event->getAll();
+            $eventsList = $event->getObject($resulset);
+
+            foreach ($eventsList as $event) {
+                echo 
+                "<div class='eventsContainer'>
+                    <button class='eventButton'>Nuevo evento</button>
+                    <div class='eventImg' style ='background-image: url(" . $event->getImgRoot() . ")'></div>
+                 </div>";
+            }
             ?>
         </section>
+
     </div>
 
     <footer>

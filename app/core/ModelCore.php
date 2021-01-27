@@ -5,7 +5,11 @@ require_once(ROOT . "app/exceptions/PdoExecuteFailException.php");
 class ModelCore
 {
     private $dbTable;
+    private $dbConnect;
+
     private $connection;
+
+    
 
     public function __construct(string $dbTable)
     {
@@ -16,8 +20,9 @@ class ModelCore
     public function setConnection(){
         require_once(ROOT . "app/core/DbConnect.php");
 
-        $pdoConnection = new DbConnect();
-        $connection = $pdoConnection->connect();
+        $this->dbConnect = new DbConnect();
+        $connection = $this->dbConnect->connect();
+        $this->dbConnect->setConnect(null);
         $this->connection = $connection;
     }
 
@@ -36,6 +41,9 @@ class ModelCore
             throw new PdoExecuteFailException();
         }
 
+        $statement = null;
+        $this->connection = null;
+
         return $results;
     }
 
@@ -44,7 +52,7 @@ class ModelCore
     {
         $this->setConnection();
 
-        $sql = "SELECT * FROM $this->table WHERE id=?";
+        $sql = "SELECT * FROM $this->dbTable WHERE id=?";
         $statement = $this->connection->prepare($sql);
         $response = $statement->execute(array($id));
 
@@ -54,6 +62,9 @@ class ModelCore
             throw new PdoExecuteFailException();
         }
 
+        $statement = null;
+        $this->connection = null;
+
         return $results;
     }
 
@@ -62,7 +73,7 @@ class ModelCore
     {
         $this->setConnection();
 
-        $sql = "SELECT * FROM $this->table WHERE $column=?";
+        $sql = "SELECT * FROM $this->dbTable WHERE $column=?";
         $statement = $this->connection->prepare($sql);
         $response = $statement->execute(array($value));
 
@@ -71,6 +82,9 @@ class ModelCore
         }else{
             throw new PdoExecuteFailException();
         }
+
+        $statement = null;
+        $this->connection = null;
 
         return $results;
     }
@@ -90,6 +104,9 @@ class ModelCore
             throw new PdoExecuteFailException();
         }
 
+        $statement = null;
+        $this->connection = null;
+
         return $results;
     }
 
@@ -98,7 +115,7 @@ class ModelCore
     {
         $this->setConnection();
 
-        $sql = "DELETE FROM $this->table WHERE id=?";
+        $sql = "DELETE FROM $this->dbTable WHERE id=?";
         $statement = $this->connection->prepare($sql);
         $response = $statement->execute(array($id));
 
@@ -108,6 +125,9 @@ class ModelCore
             throw new PdoExecuteFailException();
         }
 
+        $statement = null;
+        $this->connection = null;
+
         return $results;
     }
 
@@ -116,7 +136,7 @@ class ModelCore
     {
         $this->setConnection();
 
-        $sql = "DELETE FROM $this->table WHERE $column=?";
+        $sql = "DELETE FROM $this->dbTable WHERE $column=?";
         $statement = $this->connection->prepare($sql);
         $response = $statement->execute(array($value));
 
@@ -126,6 +146,9 @@ class ModelCore
             throw new PdoExecuteFailException();
         }
 
+        $statement = null;
+        $this->connection = null;
+
         return $results;
     }
 
@@ -134,7 +157,7 @@ class ModelCore
     {
         $this->setConnection();
 
-        $sql = "UPDATE $this->table SET $column = ? WHERE id = ?";
+        $sql = "UPDATE $this->dbTable SET $column = ? WHERE id = ?";
         $statement = $this->connection->prepare($sql);
         $response = $statement->execute(array($value, $id));
 
@@ -144,7 +167,30 @@ class ModelCore
             throw new PdoExecuteFailException();
         }
 
+        $statement = null;
+        $this->connection = null;
+
         return $results;
+    }
+
+
+    public function getDbTable(){
+        return $this->dbTable;
+    }
+
+
+    public function getConnection(){
+        return $this->connection;
+    }
+
+
+    public function setDbTable($dbTable){
+        $this->dbTable = $dbTable;
+    }
+
+
+    public function getDbConnect(){
+        return $this->dbConnect;
     }
 
 }

@@ -27,17 +27,17 @@
 
             <div class="season">
                 <div class="menuCategory seasonTitle">
-                    <img src="/mesonmontesdetoledo.com/public/images/schedule/iconoInvierno.png" alt="" class="menuCategoryIcon">
+                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/iconoInvierno.png" alt="" class="menuCategoryIcon">
                     <h3 class="categoryName">Invierno (octubre - junio)</h3>
                 </div>
 
                 <div class="scheduleDescriptionContainer">
                     <div class="menuCategory scheduleParagraph">
-                        <img src="/mesonmontesdetoledo.com/public/images/schedule/calendar.png" alt="" class="menuCategoryIcon">
+                        <img src="/mesonmontesdetoledo.com/public/images/webIcons/calendar.png" alt="" class="menuCategoryIcon">
                         <p>Viernes: 18:00 a cierre</p>
                     </div>
                     <div class="menuCategory scheduleParagraph">
-                        <img src="/mesonmontesdetoledo.com/public/images/schedule/calendar.png" alt="" class="menuCategoryIcon">
+                        <img src="/mesonmontesdetoledo.com/public/images/webIcons/calendar.png" alt="" class="menuCategoryIcon">
                         <p>Sábados<br>
                         Domingos y: 11:00 a cierre<br>
                         Festivos</p>
@@ -47,17 +47,17 @@
 
             <div class="season">
                 <div class="menuCategory seasonTitle">
-                    <img src="/mesonmontesdetoledo.com/public/images/schedule/iconoInvierno.png" alt="" class="menuCategoryIcon">
+                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/iconoInvierno.png" alt="" class="menuCategoryIcon">
                     <h3 class="categoryName">Verano (julio - septiembre)</h3>
                 </div>
 
                 <div class="scheduleDescriptionContainer">
                     <div class="menuCategory scheduleParagraph">
-                        <img src="/mesonmontesdetoledo.com/public/images/schedule/calendar.png" alt="" class="menuCategoryIcon">
+                        <img src="/mesonmontesdetoledo.com/public/images/webIcons/calendar.png" alt="" class="menuCategoryIcon">
                         <p>Martes a viernes: 19:00 a cierre</p>
                     </div>
                     <div class="menuCategory scheduleParagraph">
-                        <img src="/mesonmontesdetoledo.com/public/images/schedule/calendar.png" alt="" class="menuCategoryIcon">
+                        <img src="/mesonmontesdetoledo.com/public/images/webIcons/calendar.png" alt="" class="menuCategoryIcon">
                         <p>Sábados<br>
                         Domingos y: 11:00 a cierre<br>
                         Festivos</p>

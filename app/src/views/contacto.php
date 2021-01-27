@@ -31,11 +31,11 @@
                     Ciudad Real</p>
                 <p class="contactCardDescription">Información y reservas</p>
                 <div class="telephones">
-                    <img src="/mesonmontesdetoledo.com/public/images/contact/telefono.png" alt="" class="telephoneIcon">
+                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/telefono.png" alt="" class="telephoneIcon">
                     <p>925 409 146</p>
                 </div>
                 <div class="telephones">
-                    <img src="/mesonmontesdetoledo.com/public/images/contact/movil.png" alt="" class="telephoneIcon">
+                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/movil.png" alt="" class="telephoneIcon">
                     <p>696 731 232</p>
                 </div>
 

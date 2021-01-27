@@ -18,7 +18,7 @@
 
         <section>
             <div id="informationContainer">
-                <?php require_once(ROOT . "app/src/controllers/platesControlPanelController.php"); ?>
+                <?php require_once(ROOT . "app/src/controllers/categoriesControlPanelController.php"); ?>
             </div>
         </section>
     </div>

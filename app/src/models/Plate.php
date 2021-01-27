@@ -2,23 +2,29 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php");
 require_once(ROOT . "app/core/ModelCore.php");
 require_once(ROOT . "app/core/IResulsetToObject.php");
+require_once(ROOT . "app/src/models/PlateCategory.php");
 
 class Plate extends ModelCore implements IResulsetToObject
 { 
-    private $id, $name, $price, $category;
+    private $id, $name, $price;
+    private $plateCategory;
     
     public function __construct()
     {
         parent::__construct(get_class($this));
     }
 
-    public static function setPlateWhithAllProperties(int $id, string $name, string $price, string $category){
+    public static function setPlateWhithAllProperties(int $id, string $name, string $price, int $plateCategory){
+        $category = new PlateCategory();
+        $resulset = $category->getById($plateCategory);
+        $plateCategoryList = $category->getObject($resulset);
+
         $plate = new Plate();
 
         $plate->setId($id);
         $plate->setName($name);
         $plate->setPrice($price);
-        $plate->setCategory($category);
+        $plate->setPlateCategory($plateCategoryList[0]);
 
         return $plate;
     }
@@ -27,8 +33,8 @@ class Plate extends ModelCore implements IResulsetToObject
     public function getObject(array $resulset){
         $plates = array();
 
-        for($row = 0; $row < count($resulset); $row++){
-            array_push($plates, Plate::setPlateWhithAllProperties($resulset[$row][0], $resulset[$row][1], $resulset[$row][2], $resulset[$row][3]));
+        foreach ($resulset as $row) {
+            array_push($plates, Plate::setPlateWhithAllProperties($row[0], $row[1], $row[2], $row[3]));
         }
 
         return $plates;
@@ -50,8 +56,8 @@ class Plate extends ModelCore implements IResulsetToObject
     }
 
 
-    public function setCategory($category){
-        $this->category = $category;
+    public function setPlateCategory($plateCategory){
+        $this->plateCategory = $plateCategory;
     }
 
 
@@ -68,8 +74,8 @@ class Plate extends ModelCore implements IResulsetToObject
         return $this->price;
     }
 
-    public function getCategory(){
-        return $this->category;
+    public function getPlateCategory(){
+        return $this->plateCategory;
     }
 
 }

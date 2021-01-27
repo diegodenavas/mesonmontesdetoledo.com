@@ -19,12 +19,6 @@
         <section>
             <?php 
             require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); 
-            require_once(ROOT . "app/src/models/User.php");
-            $user = new User();
-            $resulset = $user->getAll();
-            $usersList = $user->getObject($resulset);
-
-            echo $usersList[0]->getName();
             ?>
         </section>
     </div>

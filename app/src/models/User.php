@@ -12,7 +12,7 @@ class User extends ModelCore implements IResulsetToObject
         parent::__construct(get_class($this));
     }
 
-    public static function setUserWhithAllProperties(int $id, string $name, string $pass, string $lastConnection){
+    public static function setObjectWhithAllProperties(int $id, string $name, string $pass, string $lastConnection){
         $user = new User();
 
         $user->setId($id);
@@ -27,8 +27,8 @@ class User extends ModelCore implements IResulsetToObject
     public function getObject(array $resulset){
         $users = array();
 
-        for($row = 0; $row < count($resulset); $row++){
-            array_push($users, User::setUserWhithAllProperties($resulset[$row][0], $resulset[$row][1], $resulset[$row][2], $resulset[$row][3]));
+        foreach ($resulset as $row) {
+            array_push($users, User::setObjectWhithAllProperties($row[0], $row[1], $row[2], $row[3]));
         }
 
         return $users;

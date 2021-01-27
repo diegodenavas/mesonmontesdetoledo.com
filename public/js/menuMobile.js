@@ -7,9 +7,8 @@
     
     menuIconContainer.style.height = window.innerHeight;
 
-
     menuMobileIcon.addEventListener("click", toggleMenuMobile, false);
-
+    
 
     function toggleMenuMobile(){
         if(menuMobile.style.display == "none" || menuMobile.style.display == ""){
