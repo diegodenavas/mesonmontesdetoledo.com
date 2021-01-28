@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/controlPanel.css">
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="/mesonmontesdetoledo.com/public/js/editPlates.js"></script>
+
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
 </head>
 <body>

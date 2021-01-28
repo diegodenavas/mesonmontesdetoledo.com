@@ -4,10 +4,10 @@ require_once(ROOT . "app/exceptions/PdoExecuteFailException.php");
 
 class ModelCore
 {
-    private $dbTable;
+    protected $dbTable;
     private $dbConnect;
 
-    private $connection;
+    protected $connection;
 
     
 

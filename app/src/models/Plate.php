@@ -41,6 +41,29 @@ class Plate extends ModelCore implements IResulsetToObject
     }
 
 
+    public function updateById(int $id, string $name, float $price, int $category)
+    {
+        $this->setConnection();
+
+        echo "$id<br>$name<br>$price<br>$category";
+
+        $sql = "UPDATE $this->dbTable SET name = ?, price = ?, category = ? WHERE id = ?";
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute(array($name, $price, $category, $id));
+
+        if($response == true){
+            $statement = null;
+            $this->connection = null;
+            echo "completado";
+            header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/plates.php");
+        }else{
+            $statement = null;
+            $this->connection = null;
+            throw new PdoExecuteFailException();
+        }
+    }
+
+
     public function setId($id){
         $this->id = $id;
     }
