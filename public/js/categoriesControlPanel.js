@@ -17,6 +17,7 @@ window.onload = function() {
         scrollDisabled();
         modalWindow.fadeIn(150);
         $("#recordFormCategory").attr("action", $("#recordFormCategory").attr("action") + "addCategoryController.php");
+        $("#inputSubmitCategories").css( "background-color", "rgb(0, 228, 0)");
     });
 
     selectIcon.click(function() {
@@ -45,6 +46,7 @@ window.onload = function() {
         $("#formCenterContainerDelete").show();
         $("#formCenterContainerDelete>p").html("¿Deseas borrar la categoría con ID: " + id + "?<br><br>Si lo haces perderás todos los platos de ésta categoría");
         $("#inputSubmitCategories").val("Eliminar");
+        $("#inputSubmitCategories").css( "background-color", "rgb(255, 77, 77)");
     });
 
 
@@ -62,6 +64,7 @@ window.onload = function() {
         $("#inputSubmitCategories").val("Actualizar");
         scrollDisabled();
         modalWindow.fadeIn(150);
+        $("#inputSubmitCategories").css( "background-color", "rgb(255, 208, 0)");
     });
 
 

@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/generalControlPanel.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/platesControlPanel.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

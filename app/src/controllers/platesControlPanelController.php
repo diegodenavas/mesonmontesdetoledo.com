@@ -18,46 +18,41 @@ foreach ($plateCategoriesList as $plateCategory) {
     echo 
     "<div class='categoryTitleContainer'>
         <p class='categories' id='category".$countCategory."'>" . $plateCategory->getName() . "</p>
-        <button class='addPlateButton'>Añadir</button>
     </div>
 
-    <div class='recordsContainer recordsHeader'>
-        <div class='records'>
-            <p class='recordsIdTitlte'>ID</p>
-            <div class='recordsCenterContainer'>
-                <p>PLATOS</p>
-                <p>PRECIO</p>
-            </div>
-        </div>
-    </div>";
+    <table>
+        <tr class='records'>
+            <th class='recordsIdTitlte'>ID</th>
+            <th>PLATOS</th>
+            <th>PRECIO</th>
+            <th><button class='addPlateButton'>Añadir</button></th>
+            <input type='hidden' value='" . $plateCategory->getName()."' id='plateCategory".$count."' class='plateCategory'>
+        </tr>";
 
     $countCategory++;
 
     foreach ($platesList as $plate) {
 
         echo 
-        "<div class='recordsContainer'>
-            <div class='records' >
-                <p class='recordsId' id='recordId".$count."'>" . $plate->getId() . "</p>
-                <div class='recordsCenterContainer'>
-                    <p class='recordsName' id='recordName".$count."'>" . $plate->getName() . "</p>
-                    <p class='recordsPrice' id='recordPrice".$count."'>" . $plate->getPrice() . "€</p>
-                    <input type='hidden' value='".$plate->getId()."' id='plateId".$count."'>
-                    <input type='hidden' value='".$plate->getName()."' id='plateName".$count."'>
-                    <input type='hidden' value='".$plate->getPrice()."' id='platePrice".$count."'>
-                    <input type='hidden' value='".$plate->getPlateCategory()->getName()."' id='plateCategory".$count."'>
-                </div>
-
-            </div>
-
-            <div class='recordIconsContainer'>
+        "<tr class='records' >
+            <td class='recordsId' id='recordId".$count."'>" . $plate->getId() . "</td>
+            <td class='recordsName' id='recordName".$count."'>" . $plate->getName() . "</td>
+            <td class='recordsPrice' id='recordPrice".$count."'>" . $plate->getPrice() . "€</td>
+            <input type='hidden' value='".$plate->getId()."' id='plateId".$count."' class='plateId'>
+            <input type='hidden' value='".$plate->getName()."' id='plateName".$count."' class='plateName'>
+            <input type='hidden' value='".$plate->getPrice()."' id='platePrice".$count."' class='platePrice'>
+            <input type='hidden' value='".$plate->getPlateCategory()->getName()."' id='plateCategory".$count."' class='plateCategory'>
+            <td class='recordIconsContainer'>
                 <img src='/mesonmontesdetoledo.com/public/images/webIcons/lapiz.png' class='recordsIcons editIcon'>
                 <img src='/mesonmontesdetoledo.com/public/images/webIcons/delete.png' class='recordsIcons deleteIcon'>
-            </div>
-        </div>";
+            </td>
+        </tr>";
 
         $count++;
     }
+
+    echo
+    "</table>";
 }
 
 require_once(ROOT . "app/src/includes/platesControlPanelForms.php");

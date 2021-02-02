@@ -1,0 +1,36 @@
+.categoryTitleContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(63, 63, 153);
+    color: white;
+    font-size: 2em;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    padding: 3% 0;
+    margin: 7% auto 0 auto;
+    width: 70%;
+}
+
+.categoryTitleContainer>p{
+    margin-left: 5%;
+}
+
+.addPlateButton{
+    padding: 10px 20px;
+    font-size: 0.9em;
+    background-color: rgb(0, 228, 0);
+    border: green 1px solid;
+    box-shadow: grey 0px 0px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.addPlateButton:hover{
+    background-color: rgb(0, 255, 0);
+}
+
+table{
+    margin: 0 auto;
+}

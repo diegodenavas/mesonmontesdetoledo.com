@@ -2,91 +2,91 @@ window.onload = function() {
     
     var html = document.getElementsByTagName("html");
 
+    var modalWindow = $("#modalWindowPlate");
+
     var addPlateButton = $(".addPlateButton");
-    var editIcon = $(".editIcon");
     var deleteIcon = $(".deleteIcon");
+    var updateIcon = $(".editIcon");
 
 
-    //Edit plates
+    //ADD PLATES
 
-    for (let i = 0; i < editIcon.length; i++) {
-        editIcon[i].addEventListener("click", function() {
-            $("#modalWindowEditPlate").show();
-
-            let id = $("#plateId"+i).val();
-            $("#inputIdPlate2").val(id);
-
-            let name = $("#plateName"+i).val();
-            $("#inputNamePlate2").val(name);
-
-            let price = $("#platePrice"+i).val();
-            $("#inputPricePlate2").val(price);
-
-            let category = $("#plateCategory"+i).val();
-            $("option[value='"+category+"']").attr("selected", "");
-
-            scrollDisabled();
-        }, false);
-    }
-
-    document.getElementById("modalWindowEditPlate").addEventListener("click", function(e) {
-        if (e.target.id == "recordFormEditPlate" || e.target.tagName == "INPUT" || e.target.tagName == "SELECT" || e.target.tagName == "LABEL") return;
-        else $("#modalWindowEditPlate").hide();
-        scrollEnabled();
-    }, false);
+    addPlateButton.click(function() {
+        scrollDisabled();
+        modalWindow.fadeIn(150);
+        $("#recordFormPlate").attr("action", $("#recordFormPlate").attr("action") + "addPlateController.php");
+        $("#inputSubmitPlates").css( "background-color", "rgb(0, 228, 0)");
+        let category = $(this).parent().siblings(".plateCategory").val();
+        $("#selectCategoryPlate").hide();
+        $("label[for='selectCategoryPrice']").hide();
+        $("#inputCategoryPlate").val(category);
+    });
 
 
 
-    //Delete plates
+    //DELETE PLATES
+    deleteIcon.click(function() {
+        scrollDisabled();
+        modalWindow.fadeIn(150);
+        $("#recordFormPlate").attr("action", $("#recordFormPlate").attr("action") + "deletePlateController.php");
+        $("#inputSubmitPlates").css( "background-color", "rgb(255, 77, 77)");
+        $("#inputSubmitCategories").val("Eliminar");
+        $("#inputNamePlate").removeAttr("required");
+        $("#inputPricePlate").removeAttr("required");
 
-    for (let i = 0; i < deleteIcon.length; i++) {
-        deleteIcon[i].addEventListener("click", function() {
-            $("#modalWindowDeletePlate").show();
+        let id = $(this).parent().siblings(".plateId").val();
+        $("#inputIdPlate").val(id);
 
-            let id = $("#plateId"+i).val();
-            $("#inputIdPlate3").val(id);
+        $("#formCenterContainer").hide();
+        $("#formCenterContainerDelete>p").html("¿Deseas borrar EL PLATO con ID: " + id + "?");
+        $("#formCenterContainerDelete").show();
 
-            $("#textDeletePlate").html("¿Deseas borrar el plato con ID: " + id + "?");
-
-            scrollDisabled();
-        }, false);
-    }
-
-    document.getElementById("modalWindowDeletePlate").addEventListener("click", function(e) {
-        if (e.target.id == "recordFormDeletePlate" || e.target.tagName == "INPUT" || e.target.tagName == "P" || e.target.tagName == "LABEL") return;
-        else $("#modalWindowDeletePlate").hide();
-        scrollEnabled();
-    }, false);
-
+        $("#inputCategoryPlate").val(id);
+    });
 
 
-    //Add plates
 
-    for (let i = 0; i < addPlateButton.length; i++) {
-        addPlateButton[i].addEventListener("click", function() {
-            $("#modalWindowAddPlate").show();
+    //UPDATE PLATES
+    updateIcon.click(function() {
+        let id = $(this).parent().siblings(".plateId").val();
+        let name = $(this).parent().siblings(".plateName").val();
+        let price = $(this).parent().siblings(".platePrice").val();
+        let category = $(this).parent().siblings(".plateCategory").val();
 
-            let id = $("#plateId"+i).val();
-            $("#inputIdPlate").val(id);
+        $("#recordFormPlate").attr("action", $("#recordFormPlate").attr("action") + "editPlateController.php");
+        $("#inputIdPlate").val(id);
+        $("#inputNamePlate").val(name);
+        $("#inputPricePlate").val(price);
 
-            let name = $("#plateName"+i).val();
-            $("#inputNamePlate").val(name);
+        $(".optionsCategoryPlate[value='"+category+"']").attr("selected", "");
 
-            let price = $("#platePrice"+i).val();
-            $("#inputPricePlate").val(price);
+        $("#inputSubmitCategories").val("Actualizar");
+        scrollDisabled();
+        modalWindow.fadeIn(150);
+        $("#inputSubmitCategories").css( "background-color", "rgb(255, 208, 0)");
+    });
 
-            let category = $("#category"+i).text();
-            $("#inputCategoryPlate").val(category);
 
-            scrollDisabled();
-        }, false);
-    }
 
-    document.getElementById("modalWindowAddPlate").addEventListener("click", function(e) {
-        if (e.target.id == "recordFormAddPlate" || e.target.tagName == "INPUT" || e.target.tagName == "SELECT" || e.target.tagName == "LABEL") return;
-        else $("#modalWindowAddPlate").hide();
-        scrollEnabled();
-    }, false);
+
+    //This function close the modalWindow and restores it to the initial state
+    modalWindow.click(function(e) {
+        if(e.target.id == "modalWindowPlate" && e.target.parentNode.id != "recordFormPlate"){
+            modalWindow.fadeOut(150);
+            $("#inputIdPlate").val("");
+            $("#inputNamePlate").val("");
+            $("#inputPricePlate").val("");
+            $("#selectCategoryPlate").show();
+            $("label[for='selectCategoryPrice']").show();
+            $("#recordFormPlate").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
+            $("#inputNamePlate").attr("required", "");
+            $("#inputPricePlate").attr("required", "");
+            $("#formCenterContainer").show();
+            $("#formCenterContainerDelete").hide();
+            $("#inputSubmitPlates").val("Añadir");
+            scrollEnabled();
+        }
+    });
 
 
 

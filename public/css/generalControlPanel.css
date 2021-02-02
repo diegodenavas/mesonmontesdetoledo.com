@@ -167,8 +167,16 @@ table tr:first-child{
     width: 100px;
     height: 40px;
     margin: auto;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    cursor: pointer;
 }
 
 #inputSubmitContainer{
-    padding: 10% 0;
+    padding-bottom: 10%;
+}
+
+#informationContainer{
+    margin-bottom: 10%;
 }

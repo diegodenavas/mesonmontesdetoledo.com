@@ -13,24 +13,24 @@
 
             <div id="selectIconsContainer">
 
-            <?php
-            require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php");
+                <?php
+                require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php");
 
-            $directory = ROOT . "public/images/platesIcons";
-            $dirint = dir($directory);
-            while (($archivo = $dirint->read()) !== false)
-            {
-                if($archivo == "." || $archivo == "..") continue;
-                echo "<img src='/mesonmontesdetoledo.com/public/images/platesIcons/" . $archivo . "' alt='" . $archivo . "' class='iconsForSelect'>";
-            }
-            $dirint->close();
-            ?>
+                $directory = ROOT . "public/images/platesIcons";
+                $dirint = dir($directory);
+                while (($archivo = $dirint->read()) !== false)
+                {
+                    if($archivo == "." || $archivo == "..") continue;
+                    echo "<img src='/mesonmontesdetoledo.com/public/images/platesIcons/" . $archivo . "' alt='" . $archivo . "' class='iconsForSelect'>";
+                }
+                $dirint->close();
+                ?>
 
             </div>
         </div>
 
-        <input type='hidden' value='' id='inputIdCategory' name='inputIdCategory' required>
-        <input type='hidden' value='' id='inputIconCategory' name='inputIconCategory'required>
+        <input type='hidden' value='' id='inputIdCategory' name='inputIdCategory'>
+        <input type='hidden' value='' id='inputIconCategory' name='inputIconCategory'>
 
         <div id='inputSubmitContainer'>
             <input type='submit' id='inputSubmitCategories' class='inputSubmit' value='Añadir'>
