@@ -1,0 +1,50 @@
+.categoriesIcons{
+    width: 20px;
+}
+
+#addCategoryButton{
+    padding: 10px 20px;
+    font-size: 0.9em;
+    background-color: rgb(0, 228, 0);
+    border: green 1px solid;
+    box-shadow: grey 0px 0px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#addCategoryButton:hover{
+    background-color: rgb(0, 255, 0);
+}
+
+.iconsForSelect{
+    width: 20px;
+    margin: 2%;
+    cursor: pointer;
+}
+
+#selectIcon{
+    border: grey 1px solid;
+    padding: 5px 10px;
+    background-color: rgb(216, 216, 216);
+    margin: 10% 0;
+    display: block;
+    cursor: pointer;
+}
+
+#selectIcon:hover{
+    background-color: rgb(196, 196, 196);
+}
+
+#selectIconsContainer{
+    display: none;
+}
+
+#imgFormIcon{
+    width: 20px;
+}
+
+#formCenterContainerDelete>p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+}

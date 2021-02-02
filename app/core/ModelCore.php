@@ -162,15 +162,12 @@ class ModelCore
         $response = $statement->execute(array($value, $id));
 
         if($response == true){
-            $results = $statement->fetchAll();
+            $statement = null;
+            $this->connection = null;
         }else{
             throw new PdoExecuteFailException();
         }
 
-        $statement = null;
-        $this->connection = null;
-
-        return $results;
     }
 
 

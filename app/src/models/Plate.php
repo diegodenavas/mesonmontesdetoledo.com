@@ -45,8 +45,6 @@ class Plate extends ModelCore implements IResulsetToObject
     {
         $this->setConnection();
 
-        echo "$id<br>$name<br>$price<br>$category";
-
         $sql = "UPDATE $this->dbTable SET name = ?, price = ?, category = ? WHERE id = ?";
         $statement = $this->connection->prepare($sql);
         $response = $statement->execute(array($name, $price, $category, $id));
@@ -54,7 +52,26 @@ class Plate extends ModelCore implements IResulsetToObject
         if($response == true){
             $statement = null;
             $this->connection = null;
-            echo "completado";
+            header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/plates.php");
+        }else{
+            $statement = null;
+            $this->connection = null;
+            throw new PdoExecuteFailException();
+        }
+    }
+
+    
+    public function addPlate($name, $price, $category)
+    {
+        $this->setConnection();
+
+        $sql = "INSERT INTO $this->dbTable(name, price, category) VALUES(?, ?, ?)";
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute(array($name, $price, $category));
+
+        if($response == true){
+            $statement = null;
+            $this->connection = null;
             header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/plates.php");
         }else{
             $statement = null;
@@ -64,40 +81,49 @@ class Plate extends ModelCore implements IResulsetToObject
     }
 
 
-    public function setId($id){
+
+    public function setId($id)
+    {
         $this->id = $id;
     }
 
 
-    public function setName($name){
+    public function setName($name)
+    {
         $this->name = $name;
     }
 
 
-    public function setPrice($price){
+    public function setPrice($price)
+    {
         $this->price = $price;
     }
 
 
-    public function setPlateCategory($plateCategory){
+    public function setPlateCategory($plateCategory)
+    {
         $this->plateCategory = $plateCategory;
     }
 
 
 
-    public function getId(){
+    public function getId()
+    {
         return $this->id;
     }
 
-    public function getName(){
+    public function getName()
+    {
         return $this->name;
     }
 
-    public function getPrice(){
+    public function getPrice()
+    {
         return $this->price;
     }
 
-    public function getPlateCategory(){
+    public function getPlateCategory()
+    {
         return $this->plateCategory;
     }
 

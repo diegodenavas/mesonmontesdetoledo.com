@@ -6,7 +6,7 @@
     <title>Panel de control</title>
 
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
-    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/controlPanel.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/generalControlPanel.css">
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
 </head>

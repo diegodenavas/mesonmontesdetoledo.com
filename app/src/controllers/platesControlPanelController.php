@@ -8,13 +8,18 @@ $resulsetPlateCategory = $plateCategory->getAll();
 $plateCategoriesList = $plateCategory->getObject($resulsetPlateCategory);
 
 $count=0;
+$countCategory=0;
 
 foreach ($plateCategoriesList as $plateCategory) {        
     $plate = new Plate();
     $resulsetPlate = $plate->getBy("category", $plateCategory->getId());
     $platesList = $plate->getObject($resulsetPlate);
 
-    echo "<p class='categories'>" . $plateCategory->getName() . "<button class='addPlateButton'>Añadir</button></p>
+    echo 
+    "<div class='categoryTitleContainer'>
+        <p class='categories' id='category".$countCategory."'>" . $plateCategory->getName() . "</p>
+        <button class='addPlateButton'>Añadir</button>
+    </div>
 
     <div class='recordsContainer recordsHeader'>
         <div class='records'>
@@ -26,6 +31,8 @@ foreach ($plateCategoriesList as $plateCategory) {
         </div>
     </div>";
 
+    $countCategory++;
+
     foreach ($platesList as $plate) {
 
         echo 
@@ -35,7 +42,10 @@ foreach ($plateCategoriesList as $plateCategory) {
                 <div class='recordsCenterContainer'>
                     <p class='recordsName' id='recordName".$count."'>" . $plate->getName() . "</p>
                     <p class='recordsPrice' id='recordPrice".$count."'>" . $plate->getPrice() . "€</p>
-                    <input type='hidden' value='".$plate->getPlateCategory()->getName()."' id='recordCategory".$count."'>
+                    <input type='hidden' value='".$plate->getId()."' id='plateId".$count."'>
+                    <input type='hidden' value='".$plate->getName()."' id='plateName".$count."'>
+                    <input type='hidden' value='".$plate->getPrice()."' id='platePrice".$count."'>
+                    <input type='hidden' value='".$plate->getPlateCategory()->getName()."' id='plateCategory".$count."'>
                 </div>
 
             </div>
@@ -49,24 +59,5 @@ foreach ($plateCategoriesList as $plateCategory) {
         $count++;
     }
 }
-?>
 
-    <div id='modalWindow'>
-        <form id='recordForm' action='/mesonmontesdetoledo.com/app/src/controllers/editPlateController.php' method='POST'>
-            <input type='hidden' value='' id='inputIdPlate' name='inputIdPlate' required>
-            <label for="inputNamePlate">Nombre del plato</label>
-            <input type='text' value='' id='inputNamePlate' name='inputNamePlate'required>
-            <label for="inputPricePlate">Precio del plato</label>
-            <input type='text' value='' id='inputPricePlate' name='inputPricePlate'required>
-            <label for="selectCategoryPrice">Categoría del plato</label>
-            <select id='selectCategoryPlate' name='selectCategoryPrice'required>
-                <?php
-                foreach ($plateCategoriesList as $plateCategory){
-                    echo
-                    "<option value='".$plateCategory->getName()."'>" . $plateCategory->getName() . "</option>";
-                }
-                ?>
-            </select>
-            <input type='submit' id='inputSubmitId' class='inputSubmit' form='recordForm'>
-        </form>
-    </div>
+require_once(ROOT . "app/src/includes/platesControlPanelForms.php");

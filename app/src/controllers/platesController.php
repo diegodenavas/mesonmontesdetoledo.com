@@ -16,7 +16,7 @@
                 echo
                 "<div class='categoryContainer'>
                     <div class='categoryTitle'>
-                        <img src='" . $plateCategory->getIconRoot() . "' alt='" . $plateCategory->getName() . "' class='menuCategoryIcon'>
+                        <img src='/mesonmontesdetoledo.com/public/images/platesIcons/" . $plateCategory->getIconRoot() . "' alt='" . $plateCategory->getName() . "' class='menuCategoryIcon'>
                         <div class='categoryCenterContainer'>
                             <h3 id='categoryName'>" . $plateCategory->getName() . "</h3>
                             <img src='/mesonmontesdetoledo.com/public/images/webIcons/despliegue.png' alt='desplegar menu' class='menuCategoryArrowIcon'>

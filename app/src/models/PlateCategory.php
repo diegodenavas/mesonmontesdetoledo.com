@@ -34,6 +34,47 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     }
 
 
+    public function addCategory(array $values)
+    {
+        $this->setConnection();
+
+        $sql = "INSERT INTO $this->dbTable(name, iconRoot) VALUES(?, ?)";
+        
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute(array($values[0], $values[1]));
+
+        if($response == true){
+            $statement = null;
+            $this->connection = null;
+            header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/categories.php");
+        }else{
+            $statement = null;
+            $this->connection = null;
+            throw new PdoExecuteFailException();
+        }
+    }
+
+
+    public function updateById(int $id, array $values)
+    {
+        $this->setConnection();
+
+        $sql = "UPDATE $this->dbTable SET name = ?, iconRoot = ? WHERE id = ?";
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute(array($values[0], $values[1], $id));
+
+        if($response == true){
+            $statement = null;
+            $this->connection = null;
+        }else{
+            $statement = null;
+            $this->connection = null;
+            throw new PdoExecuteFailException();
+        }
+
+    }
+
+
     public function setId($id){
         $this->id = $id;
     }
