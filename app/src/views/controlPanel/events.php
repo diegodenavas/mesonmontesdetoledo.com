@@ -7,8 +7,13 @@
 
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/generalControlPanel.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/eventsControlPanel.css">
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="/mesonmontesdetoledo.com/public/js/eventsControlPanel.js"></script>
 </head>
 <body>
     <?php require_once(ROOT . "app/src/includes/controlPanelHeader.php"); ?>
@@ -25,13 +30,21 @@
             $resulset = $event->getAll();
             $eventsList = $event->getObject($resulset);
 
+            $count = 0;
+
             foreach ($eventsList as $event) {
                 echo 
                 "<div class='eventsContainer'>
-                    <button class='eventButton'>Nuevo evento</button>
-                    <div class='eventImg' style ='background-image: url(" . $event->getImgRoot() . ")'></div>
+                    <button id='eventButton'>Nuevo evento</button>
+                    <img src='/mesonmontesdetoledo.com/public/images/events/".$event->getImgRoot()."' class='eventImg'>
+                    <input type='hidden' name='inputId".$count."' value='".$event->getId()."' id='inputId".$count."' class='inputId'>
+                    <input type='hidden' name='inputName".$count."' value='".$event->getName()."' id='inputName".$count."' class='inputName'>
+                    <input type='hidden' name='inputImg".$count."' value='".$event->getImgRoot()."' id='inputImg".$count."' class='inputImg'>
                  </div>";
+
+                 $count++;
             }
+            require_once(ROOT . "app/src/includes/eventsControlPanelForms.php");
             ?>
         </section>
 

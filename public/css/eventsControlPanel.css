@@ -1,0 +1,33 @@
+.eventImg{
+    display: block;
+    width: 100%;
+}
+
+.eventsContainer{
+    width: 40%;
+    margin: 5% auto 10% auto;
+    text-align: right;
+}
+
+.eventImg{
+    margin-top: 5%;
+}
+
+#eventButton{
+    padding: 20px 20px;
+    font-size: 0.9em;
+    background-color: rgb(0, 228, 0);
+    border: green 1px solid;
+    box-shadow: grey 0px 0px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#eventButton:hover{
+    background-color: rgb(0, 255, 0);
+}
+
+#inputSubmitEvents{
+    background-color: rgb(0, 228, 0);
+}

@@ -34,6 +34,26 @@ class Event extends ModelCore implements IResulsetToObject
     }
 
 
+    public function updateById(int $id, array $values)
+    {
+        $this->setConnection();
+
+        $sql = "UPDATE $this->dbTable SET name = ?, imgRoot = ? WHERE id = ?";
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute(array($values[0], $values[1], $id));
+
+        if($response == true){
+            $statement = null;
+            $this->connection = null;
+        }else{
+            $statement = null;
+            $this->connection = null;
+            throw new PdoExecuteFailException();
+        }
+
+    }
+
+
     public function setId($id){
         $this->id = $id;
     }
