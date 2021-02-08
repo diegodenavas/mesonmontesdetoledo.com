@@ -15,6 +15,108 @@ header{
     font-weight: bold;
 }
 
+#homeInstructionsContainer{
+    width: 70%;
+    margin: 5% auto;
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+#homeInstructionsContainer h2{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10% 0 2% 0;
+    color: rgb(53, 43, 145);
+}
+
+#homeInstructionsContainer span{
+    display: block;
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+
+#homeInstructionsContainer b{
+    font-weight: bold;
+    color: blue;
+}
+
+#homeInstructionsContainer strong{
+    font-weight: bold;
+    color: red;
+}
+
+#homeInstructionsContainer i{
+    font-style: italic;
+}
+
+#homeInstructionsContainer p{
+    line-height: 25px;
+    margin-bottom: 2%;
+}
+
+
+
+/*MENU*/
+nav{
+    background-color: rgba(255 , 255, 255, 0.5);
+}
+
+#menuIcon{
+    height: 50%;
+    margin-left: 10%;
+}
+
+#menuIcon{
+    cursor: pointer;
+}
+
+#menuIconContainer{
+    height: 40px;
+    display: none;
+    align-items: center;
+}
+
+#menuMobileContainer{
+    height: 100vh;
+    background-color: rgba(255 , 255, 255, 0.5);
+    font-weight: bold;
+    display: none;
+}
+
+.menuMobile>a{
+    padding: 5%;
+    border-bottom: rgb(129, 129, 129) 1px solid;
+    display: flex;
+    align-items: center;
+}
+
+.menuMobile>a>li{
+    width: 100%;
+}
+
+.menuMobile>a:first-child{
+    border-top: rgb(129, 129, 129) 2px solid;
+}
+
+.menuMobile>a:last-child{
+    border-bottom: none;
+}
+
+.arrowIcon{
+    width: 15px;
+    padding: 0 2% 0 6%;
+}
+
+.menuMobile>a:link, .menuMobile>a:visited, .menuMobile>a:active {
+    text-decoration:none;
+    color: black;
+}
+
+
+
+/*CENTER CONTAINER*/
+
 #centerContainer{
     display: flex;
     height: 100%;
@@ -43,6 +145,7 @@ header{
     font-size: 1.2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: bold;
+    text-align: center;
 }
 
 #listContainer>a{
@@ -82,8 +185,8 @@ table td, table th{
     vertical-align: middle;
 }
 
-table tr:first-child{
-    background-color: rgb(145, 145, 255);
+.recordsTh{
+    background-color: rgb(145, 145, 255) !important;
     font-weight: bold;
     font-size: 1.3em;
     color: white;
@@ -179,4 +282,43 @@ table tr:first-child{
 
 #informationContainer{
     margin-bottom: 10%;
+}
+
+
+/*MEDIAS QUERIES*/
+@media (max-width: 720px) {
+    #asideControlPanel{
+        display: none;
+    }
+
+    #centerContainer>section{
+        width: 95%;
+        margin: auto;
+    }
+
+    table{
+        width: 100%;
+        font-size: 1em;
+    }
+
+    header{
+        font-size: 1.2em;
+    }
+
+    header h1{
+        text-align: right;
+    }
+
+    #menuIconContainer{
+        display: flex;
+    }
+
+    #homeInstructionsContainer{
+        width: 95%;
+        font-size: 1em;
+    }
+
+    #homeInstructionsContainer h2{
+        font-size: 1.7em;
+    }
 }

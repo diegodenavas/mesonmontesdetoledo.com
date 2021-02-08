@@ -16,7 +16,10 @@
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
 </head>
 <body>
-    <?php require_once(ROOT . "app/src/includes/controlPanelHeader.php"); ?>
+    <?php 
+    require_once(ROOT . "app/src/includes/controlPanelHeader.php"); 
+    require_once(ROOT . "app/src/includes/navControlPanel.php");
+    ?>
 
     <div id="centerContainer">
         <?php require_once(ROOT . "app/src/includes/controlPanelAside.php"); ?>

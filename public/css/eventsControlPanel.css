@@ -10,7 +10,14 @@
 }
 
 .eventImg{
-    margin-top: 5%;
+    margin-top: 10%;
+    box-shadow: black 0px 0px 10px
+}
+
+#eventButtonsContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #eventButton{
@@ -28,6 +35,37 @@
     background-color: rgb(0, 255, 0);
 }
 
+#deleteEventButton{
+    padding: 20px 20px;
+    font-size: 0.9em;
+    background-color: rgb(255, 77, 77);
+    border: rgb(255, 32, 32) 1px solid;
+    border: green 1px solid;
+    box-shadow: grey 0px 0px 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#deleteEventButton:hover{
+    background-color: rgb(255, 0, 0);
+}
+
 #inputSubmitEvents{
     background-color: rgb(0, 228, 0);
+}
+
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 720px) {
+    .categoryTitleContainer{
+        width: 100%;
+    }
+
+    .eventsContainer{
+        width: 95%;
+        margin: 5% auto 10% auto;
+        text-align: right;
+    }
 }

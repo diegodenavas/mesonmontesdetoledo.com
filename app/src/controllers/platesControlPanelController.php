@@ -16,12 +16,12 @@ foreach ($plateCategoriesList as $plateCategory) {
     $platesList = $plate->getObject($resulsetPlate);
 
     echo 
-    "<div class='categoryTitleContainer'>
-        <p class='categories' id='category".$countCategory."'>" . $plateCategory->getName() . "</p>
-    </div>
+    "<table>
+        <div class='records categoryTitleContainer'>
+            <p class='categories' id='category".$countCategory."'>" . $plateCategory->getName() . "</p>
+        </div>
 
-    <table>
-        <tr class='records'>
+        <tr class='records recordsTh'>
             <th class='recordsIdTitlte'>ID</th>
             <th>PLATOS</th>
             <th>PRECIO</th>

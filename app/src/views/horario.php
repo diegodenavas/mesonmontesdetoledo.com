@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/general.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/horario.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>

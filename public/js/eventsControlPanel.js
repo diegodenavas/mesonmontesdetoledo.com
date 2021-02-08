@@ -3,13 +3,36 @@ window.onload = function() {
     var html = $("html");
 
     var addButton = $("#eventButton");
+    var deleteButton = $("#deleteEventButton");
     var modalWindow = $(".modalWindow");
 
 
+
+    //ADD EVENT
+
     addButton.click(function() {
         $("#modalWindowEvent").fadeIn(150);
-        let id = $(this).siblings(".inputId").val();
+        $("#recordFormEvent").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/updateEventController.php");
+        let id = $(this).parent().siblings(".inputId").val();
         $("#inputIdEvent").val(id);
+        scrollDisabled();
+    })
+
+
+
+    //DELETE EVENT
+
+    deleteButton.click(function() {
+        $("#modalWindowEvent").fadeIn(150);
+        $("#recordFormEvent").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/deleteEventController.php");
+        let id = $(this).parent().siblings(".inputId").val();
+        $("#formCenterContainer").hide();
+        $("#formCenterContainerDelete").show();
+        $("#formCenterContainerDelete>p").html("¿Deseas borrar el evento?");
+        $("#inputSubmitEvents").val("Eliminar");
+        $("#inputSubmitEvents").css( "background-color", "rgb(255, 77, 77)");
+        $("#inputIdEvent").val(id);
+        $("#inputNameEvent").removeAttr("required");
         scrollDisabled();
     })
 
@@ -22,6 +45,11 @@ window.onload = function() {
             $("#inputIdEvent").val("");
             $("#inputNameEvent").val("");
             $("#inputSubmitEvents").val("Añadir");
+            $("#inputSubmitEvents").css( "background-color", "rgb(0, 228, 0)");
+            $("#recordFormEvent").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
+            $("#formCenterContainerDelete").hide();
+            $("#formCenterContainer").show();
+            $("#inputNameEvent").attr("required", "");
             scrollEnabled();
         }
     });

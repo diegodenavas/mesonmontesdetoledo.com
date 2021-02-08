@@ -29,12 +29,23 @@ if (in_array($imgType, $allowedTypes) && ($imgSize < 200000))
 }
 
 $event = new Event();
+$resulset = $event->getAll();
+$eventsList = $event->getObject($resulset);
 
-try{
-    $event->updateById($id, array($name, $imgName));
-    header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/events.php");
-}catch(PdoExecuteFailException $e){
-    echo $e->getMessage();
+if(count($eventsList) > 0){
+    try{
+        $event->updateById($id, array($name, $imgName));
+        header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/events.php");
+    }catch(PdoExecuteFailException $e){
+        echo $e->getMessage();
+    }
+}else{
+    try {
+        $event->addEvent($name, $imgName);
+        header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/events.php");
+    } catch (PdoExecuteFailException $e) {
+        echo $e->getMessage();
+    }
 }
 
 

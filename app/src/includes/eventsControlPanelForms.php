@@ -1,5 +1,8 @@
 <div class='modalWindow' id='modalWindowEvent'>
-    <form id='recordFormEvent' class='recordForm' action='/mesonmontesdetoledo.com/app/src/controllers/updateEventController.php' method='POST' enctype='multipart/form-data'>
+    <form id='recordFormEvent' class='recordForm' action='/mesonmontesdetoledo.com/app/src/controllers/' method='POST' enctype='multipart/form-data'>
+        <div id='formCenterContainerDelete'>
+            <p></p>
+        </div>
         <div id='formCenterContainer'>
             <label for="inputNameEvent">Nombre del evento
                 <input type='text' value='' id='inputNameEvent' name='inputNameEvent' required>

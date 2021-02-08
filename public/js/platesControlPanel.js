@@ -29,6 +29,7 @@ window.onload = function() {
         scrollDisabled();
         modalWindow.fadeIn(150);
         $("#recordFormPlate").attr("action", $("#recordFormPlate").attr("action") + "deletePlateController.php");
+        $("#inputSubmitPlates").val("Eliminar");
         $("#inputSubmitPlates").css( "background-color", "rgb(255, 77, 77)");
         $("#inputSubmitCategories").val("Eliminar");
         $("#inputNamePlate").removeAttr("required");
@@ -59,8 +60,8 @@ window.onload = function() {
         $("#inputPricePlate").val(price);
 
         $(".optionsCategoryPlate[value='"+category+"']").attr("selected", "");
-
-        $("#inputSubmitCategories").val("Actualizar");
+        $("#inputSubmitPlates").val("Actualizar");
+        $("#inputSubmitPlates").css( "background-color", "rgb(244, 229, 96)");
         scrollDisabled();
         modalWindow.fadeIn(150);
         $("#inputSubmitCategories").css( "background-color", "rgb(255, 208, 0)");

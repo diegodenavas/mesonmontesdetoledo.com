@@ -1,3 +1,7 @@
+section{
+    padding-bottom: 10%;
+}
+
 #contactCard{
     background-color: #FCFBDF;
     border-radius: 10px;
@@ -10,6 +14,7 @@
 #contactCardTitle{
     font-size: 1em;
     padding-bottom: 2%;
+    font-family: 'Lobster Two', cursive;
 }
 
 .contactCardDescription{
@@ -21,6 +26,7 @@
     font-size: 0.8em;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: auto;
     padding-bottom: 2%;
     text-align: center;
@@ -31,6 +37,24 @@
     padding-right: 2%;
 }
 
-#XXX{
-    padding: 10%;
+/*MEDIAS QUERIES*/
+
+@media (min-width: 600px) {
+
+    .centerContainer{
+        width: 60%;
+    }
+
+    #contactCardTitle{
+        font-size: 1.7em;
+    }
+
+    .contactCardDescription{
+        font-size: 1em;
+    }
+
+    .telephoneIcon{
+        width: 3%;
+    }
+
 }

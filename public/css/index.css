@@ -1,62 +1,137 @@
+section{
+    background-image: none;
+    background-color: rgb(240, 240, 240);
+}
+
 section p{
     font-weight: bold;
-    color: white;
-    text-shadow: black 1px 1px 2px;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(235, 235, 235);
+    font-family: 'Lobster Two', cursive;
+    color: rgb(126, 0, 0);
 }
 
-.opinions{
-    height: 50px;
-    background-color: rgba(33, 28, 45, 0.8);
+.sectionContainer{
+    display: flex;
+    padding: 15% 5%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-image: url("/mesonmontesdetoledo.com/public/images/plato.png");
+    background-size: 40%;
+    background-repeat: no-repeat;
 }
 
-.gallery{
-    display: grid;
-    grid-gap: 0.5em;
-    grid-template-columns: 30% 30% 30%;
-    grid-template-rows: 30% 30% 30%;
+#sectionContainer1{
+    padding: 5% 5% 15% 5%;
+    background-position: left bottom -1px;
+}
+
+#sectionContainer2{
+    background-image: url("/mesonmontesdetoledo.com/public/images/filete.png");
+    background-position: right bottom 0px;
+    background-size: 50%;
+}
+
+#sectionContainer3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10% 0;
+    background-image: url("/mesonmontesdetoledo.com/public/images/encina.png");
+    background-position: center bottom 0px;
+    background-size: 100%;
+}
+
+.paragraphSectionContainer{
     width: 50%;
 }
 
-.imgGallery{
-    height: 100%;
-    width: 100%;
-    border: white 1px solid;
+.paragraphSectionContainer>p{
+    text-shadow: white 1px 1px 2px;
 }
 
-#imgGalleryCenterTop{
-    position: relative;
-    top: -10%;
+.paragraphSectionContainer:first-child{
+    padding-right: 10%;
 }
 
-#imgGalleryCenterLeft{
-    position: relative;
-    left: -10%;
+.paragraphSectionContainer:last-child{
+    padding-left: 10%;
 }
 
-#imgGalleryCenterRight{
-    position: relative;
-    right: -10%;
+.paragraphSectionContainer a:link, .paragraphSectionContainer a:visited, .paragraphSectionContainer a:active{
+    text-decoration: none;
 }
 
-#imgGalleryCenterBottom{
-    position: relative;
-    bottom: -10%;
+.paragraphSectionContainer2{
+    width: 50%;
+    margin-bottom: 5%;
 }
 
-#gallery2img{
-    box-shadow: black 2px 2px 3px;
+.paragraphSectionContainer2>p{
+    text-shadow: white 1px 1px 2px;
 }
 
-#gallery3{
-    width: 100%;
-    margin-top: 5%;
-    position: relative;
+.paragraphSectionContainer2 a:link, .paragraphSectionContainer2 a:visited, .paragraphSectionContainer2 a:active{
+    text-decoration: none;
+}
+
+.paragraphSectionA{
+    padding: 4% 3%;
+    width: 75%;
+    margin: 10% auto 0 auto;
+    background-color: rgb(126, 0, 0);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 0.8em;
+    color: white;
+    transition: ease-in-out 0.3s;
+}
+
+.paragraphSectionContainer2 .paragraphSectionA{
+    width: 50%;
+    padding: 2% 0%;
+}
+
+.paragraphSectionA:hover{
+    background-color: rgb(153, 0, 0);
+}
+
+.opinions{
+    background-color: rgba(33, 28, 45, 0.8);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.opinions p{
+    color: white;
+}
+
+.opinions>img{
+    padding: 3%;
+    width: 8%;
+}
+
+.commentsContainer>p{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 2.4vw;
+    font-weight: normal;
+    font-style: italic;
+    padding: 1% 0;
+}
+
+.commentsContainer>img{
+    width: 70px;
+}
+
+.gallery{
+    width: 50%;
+    box-shadow: black 0px 0px 5px;
 }
 
 .gallery3img{
-    width: 40%;
-    border: white 1px solid;
+    width: 60%;
+    box-shadow: black 0px 0px 5px;
 }
 
 .zIndexFront{
@@ -64,97 +139,94 @@ section p{
     top: -40px;
 }
 
-#gallery3Container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.sectionContainer{
+#eventImgContainer{
     width: 90%;
-    display: flex;
-    margin: auto;
-    padding: 10% 0;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+    margin: 5% auto;
 }
 
-.sectionContainer2{
-    width: 90%;
-    margin: auto;
-    padding: 10% 0;
-    text-align: center;
-}
-
-.paragraphSectionContainer:first-child{
-    width: 50%;
-    padding-right: 10%;
-}
-
-.paragraphSectionContainer:last-child{
-    width: 50%;
-    padding-left: 10%;
+#eventImg{
+    width: 100%;
+    box-shadow: black 0px 0px 10px;
+    border-radius: 10px;
 }
 
 
 /*MEDIAS QUERIES*/
-@media (min-width: 550px) {
+
+@media (min-width: 600px) {
+    .sectionContainer>p{
+        padding: 0;
+    }
+
+    #sectionContainer3{
+        background-position: center bottom;
+    }
+
     .paragraphSectionContainer{
-        font-size: 1.1em;
+        font-size: 2.3em;
+        position: relative;
+        background-image: url("/mesonmontesdetoledo.com/public/images/fondoParticulas.png");
+        background-position: center center;
+        background-size: cover;
+        padding: 5%;
+        width: 30%;
+        border-top: rgb(126, 0, 0) 7px solid;
+        border-bottom: rgb(126, 0, 0) 7px solid;
     }
 
-    #paragraphSectionContainer3{
-        font-size: 1.1em;
-    }
-}
-
-@media (min-width: 650px) {
-    .paragraphSectionContainer{
-        font-size: 1.2em;
-    }
-
-    #paragraphSectionContainer3{
-        font-size: 1.2em;
-    }
-}
-
-@media (min-width: 750px) {
-    .paragraphSectionContainer{
-        font-size: 1.3em;
+    .paragraphSectionContainer2{
+        position: relative;
+        font-size: 2.5em;
+        border-top: rgb(126, 0, 0) 7px solid;
+        border-bottom: rgb(126, 0, 0) 7px solid;
+        margin-bottom: 0;
+        padding: 5% 0;
+        top: 100px;
+        background-image: url("/mesonmontesdetoledo.com/public/images/fondoParticulas.png");
+        background-position: center center;
+        background-size: cover;
     }
 
-    #paragraphSectionContainer3{
-        font-size: 1.3em;
-    }
-}
-
-@media (min-width: 850px) {
-    .paragraphSectionContainer{
-        font-size: 1.4em;
+    .paragraphSectionContainer:first-child{
+        left: 4%;
+        padding: 5%;
     }
 
-    #paragraphSectionContainer3{
-        font-size: 1.4em;
-    }
-}
-
-@media (min-width: 950px) {
-    .paragraphSectionContainer{
-        font-size: 1.5em;
+    .paragraphSectionContainer:last-child{
+        right: 4%;
+        padding: 5%;
     }
 
-    #paragraphSectionContainer3{
-        font-size: 1.5em;
-    }
-}
-
-@media (min-width: 1150px) {
-    .paragraphSectionContainer{
-        font-size: 1.6em;
+    .paragraphSectionA{
+        font-size: 0.6em;
+        width: 50%;
+        background-color: initial;
+        border: rgb(126, 0, 0) 4px solid;
+        color: black;
     }
 
-    #paragraphSectionContainer3{
-        font-size: 1.6em;
+    .paragraphSectionA:hover{
+        font-size: 0.6em;
+        width: 50%;
+        background-color: rgb(126, 0, 0);
+        border: rgb(126, 0, 0) 4px solid;
+        color: white;
+    }
+
+    .commentsContainer>img{
+        width: 150px;
+    }
+
+    .commentsContainer>p{
+        font-size: 1.7em;
+    }
+
+    .opinions{
+        box-shadow: black 0px 0px 10px;
+    }
+
+    .opinions>img{
+        width: 5%;
+        padding: 2%;
     }
 }

@@ -16,7 +16,10 @@
     <script src="/mesonmontesdetoledo.com/public/js/eventsControlPanel.js"></script>
 </head>
 <body>
-    <?php require_once(ROOT . "app/src/includes/controlPanelHeader.php"); ?>
+    <?php 
+    require_once(ROOT . "app/src/includes/controlPanelHeader.php"); 
+    require_once(ROOT . "app/src/includes/navControlPanel.php");
+    ?>
 
     <div id="centerContainer">
         <?php require_once(ROOT . "app/src/includes/controlPanelAside.php"); ?>
@@ -32,10 +35,15 @@
 
             $count = 0;
 
-            foreach ($eventsList as $event) {
                 echo 
                 "<div class='eventsContainer'>
-                    <button id='eventButton'>Nuevo evento</button>
+                    <div id='eventButtonsContainer'>
+                        <button id='deleteEventButton'>Eliminar evento</button>
+                        <button id='eventButton'>Nuevo evento</button>
+                    </div>";
+                
+                    foreach ($eventsList as $event) {
+                    echo"
                     <img src='/mesonmontesdetoledo.com/public/images/events/".$event->getImgRoot()."' class='eventImg'>
                     <input type='hidden' name='inputId".$count."' value='".$event->getId()."' id='inputId".$count."' class='inputId'>
                     <input type='hidden' name='inputName".$count."' value='".$event->getName()."' id='inputName".$count."' class='inputName'>

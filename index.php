@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/general.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/index.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
@@ -17,46 +20,63 @@
     <?php require_once(ROOT . "/app/src/includes/header.php"); ?>
 
     <section>
-        <?php require_once(ROOT . "/app/src/includes/nav.php"); ?>
+        <?php 
+        require_once(ROOT . "/app/src/includes/nav.php"); 
+        require_once(ROOT . "/app/src/models/Event.php"); 
+        
+        $event = new Event();
+        $resulset = $event->getAll();
+        $eventsList = $event->getObject($resulset);
 
-        <div class="sectionContainer">
-            <p class="paragraphSectionContainer">Especialistas en clientes que regresan porque saben donde se 
-                encuentra la buena mesa
-            </p>
-            <div class="gallery" id="gallery">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/BarraCaptura.JPG" alt="" class="imgGallery">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/fachada1.jpeg" alt="" class="imgGallery" id="imgGalleryCenterTop">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/fachada2.jpeg" alt="" class="imgGallery">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/header.jpg" alt="" class="imgGallery" id="imgGalleryCenterLeft">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/PlatoCaptura.JPG" alt="" class="imgGallery">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/terraza1.jpeg" alt="" class="imgGallery" id="imgGalleryCenterRight">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/terraza2.jpeg" alt="" class="imgGallery">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/terraza3.jpeg" alt="" class="imgGallery" id="imgGalleryCenterBottom">
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/terraza4.jpeg" alt="" class="imgGallery">
+        if (count($eventsList) > 0) {
+            echo 
+            "<div id='eventImgContainer'>
+                <img src='/mesonmontesdetoledo.com/public/images/events/".$eventsList[0]->getImgRoot()."' id='eventImg'>
+            </div>";
+        }
+        ?>
+
+        <div class="sectionContainer" id='sectionContainer1'>
+            <div class="paragraphSectionContainer">
+                <p>Especialistas en clientes que regresan porque saben donde se 
+                    encuentra la buena mesa
+                </p>
+                <a href="/mesonmontesdetoledo.com/app/src/views/contacto.php"><p class='paragraphSectionA'>Donde estamos</p></a>
+            </div>
+            <img src="/mesonmontesdetoledo.com/public/images/gallery/BarraCaptura.JPG" alt="" class="gallery">
+        </div>
+
+        <div class="opinions">
+            <img src="/mesonmontesdetoledo.com/public/images/webIcons/comment.png" alt="opinions">
+            <div class='commentsContainer'>
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/puntuacion.png" alt="punctuation">
+                <p>"Estupendo restaurante para una comida en buena compañía"</p>
             </div>
         </div>
 
-        <div class="opinions"></div>
-
-        <div class="sectionContainer">
+        <div class="sectionContainer" id='sectionContainer2'>
             <img src="/mesonmontesdetoledo.com/public/images/gallery/PlatoCaptura.JPG" alt="" class="gallery" id="gallery2img">
-            <p class="paragraphSectionContainer">Especialistas en carne de venado, de ternera,
-            y vaca.
-            </p>
+            <div class="paragraphSectionContainer">
+                <p>Especialistas en carne de venado, de ternera, y vaca
+                </p>
+                <a href="/mesonmontesdetoledo.com/app/src/views/carta.php"><p class='paragraphSectionA'>Nuestra carta</p></a>
+            </div>
         </div>
 
-        <div class="opinions"></div>
-            
-        <div class="sectionContainer2">
-            <p id="paragraphSectionContainer3">Disfruta de la mejor comida en pleno Parque Nacional de Cabañeros.
-            </p>
-            <div id="gallery3">
-                <div id="gallery3Container">
-                    <img src="/mesonmontesdetoledo.com/public/images/gallery/rutaLasTorres.jpg" alt="" class="gallery3img">
-                    <img src="/mesonmontesdetoledo.com/public/images/gallery/rutaLasTorres2.jpg" alt="" class="gallery3img">
-                </div>
-                <img src="/mesonmontesdetoledo.com/public/images/gallery/ciervo.jpg" alt="" class="gallery3img zIndexFront">
+        <div class="opinions">
+            <img src="/mesonmontesdetoledo.com/public/images/webIcons/comment.png" alt="opinions">
+            <div class='commentsContainer'>
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/puntuacion.png" alt="punctuation">
+                <p>"Supera todas las expectativas"</p>
             </div>
+        </div>
+
+        <div class="sectionContainer" id='sectionContainer3'>
+            <div class="paragraphSectionContainer2">
+                <p>Disfruta de la mejor comida en pleno Parque Nacional de Cabañeros</p>
+                <a href="/mesonmontesdetoledo.com/app/src/views/horario.php"><p class='paragraphSectionA'>Horario</p></a>
+            </div>
+            <img src="/mesonmontesdetoledo.com/public/images/gallery/rutaLasTorres.jpg" alt="" class="gallery3img">
         </div>
     </section>
 

@@ -55,3 +55,28 @@
     width: 15%;
     text-align: right;
 }
+
+
+
+/*MEDIAS QUERIES*/
+
+@media (min-width: 600px) {
+
+    #menuRestaurantComplete{
+        width: 60%;
+    }
+
+    .categoryTitle{
+        font-size: 1.2em;
+    }
+
+    .menuCategoryIcon{
+        width: 20px;
+        height: 20px;
+    }
+
+    .platesContainer{
+        font-size: 1em;
+    }
+
+}

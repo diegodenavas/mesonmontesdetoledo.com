@@ -4,8 +4,6 @@
     var menuMobile = document.getElementById("menuMobileContainer");
     var menuMobileIcon = document.getElementById("menuIcon");
     var menuIconContainer = document.getElementById("menuIconContainer");
-    
-    menuIconContainer.style.height = window.innerHeight;
 
     menuMobileIcon.addEventListener("click", toggleMenuMobile, false);
     
