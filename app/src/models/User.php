@@ -35,6 +35,24 @@ class User extends ModelCore implements IResulsetToObject
     }
 
 
+    public function addUser(string $name, string $pass)
+    {
+        $this->setConnection();
+
+        $sql = "INSERT INTO $this->dbTable(name, pass, lastConnection) VALUES(?, ?, CURDATE())";
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute(array($name, $pass));
+
+        if($response == true){
+            $statement = null;
+            $this->connection = null;
+        }else{
+            throw new PdoExecuteFailException();
+        }
+
+    }
+
+
     public function setId($id){
         $this->id = $id;
     }

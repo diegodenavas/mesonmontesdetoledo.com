@@ -48,6 +48,48 @@ class ModelCore
     }
 
 
+    public function getAllOrderByAsc(string $column)
+    {
+        $this->setConnection();
+
+        $sql = "SELECT * FROM $this->dbTable ORDER BY $column ASC";
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute();
+
+        if($response == true){
+            $results = $statement->fetchAll();
+        }else{
+            throw new PdoExecuteFailException();
+        }
+
+        $statement = null;
+        $this->connection = null;
+
+        return $results;
+    }
+
+
+    public function getAllOrderByDesc(string $column)
+    {
+        $this->setConnection();
+
+        $sql = "SELECT * FROM $this->dbTable ORDER BY $column DESC";
+        $statement = $this->connection->prepare($sql);
+        $response = $statement->execute();
+
+        if($response == true){
+            $results = $statement->fetchAll();
+        }else{
+            throw new PdoExecuteFailException();
+        }
+
+        $statement = null;
+        $this->connection = null;
+
+        return $results;
+    }
+
+
     public function getById(int $id)
     {
         $this->setConnection();

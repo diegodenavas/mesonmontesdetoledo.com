@@ -3,7 +3,7 @@
             require_once(ROOT . "app/src/models/Plate.php");
 
             $plateCategory = new PlateCategory();
-            $resulsetPlateCategory = $plateCategory->getAll();
+            $resulsetPlateCategory = $plateCategory->getAllOrderByAsc("importance");
             $plateCategoriesList = $plateCategory->getObject($resulsetPlateCategory);
 
 
@@ -28,9 +28,12 @@
                         foreach ($platesList as $plate) {
                             echo
                             "<div class='plate'>
-                                    <p class='plateName'>" . $plate->getName() . "</p>
-                                    <p class='platePrice'>" . $plate->getPrice() . "€</p>
-                            </div>";
+                                    <p class='plateName'>" . $plate->getName() . "</p>";
+                                    if ($plate->getPrice() != 0) {
+                                        echo "<p class='platePrice'>" . $plate->getPrice() . "€</p>";
+                                    }
+                            echo        
+                            "</div>";
                         }
                           
                 echo

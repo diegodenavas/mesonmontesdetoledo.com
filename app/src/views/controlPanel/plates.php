@@ -13,7 +13,13 @@
 
     <script src="/mesonmontesdetoledo.com/public/js/platesControlPanel.js"></script>
 
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
+    <?php 
+    require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); 
+    session_start();
+    if (!isset($_SESSION['user'])) {
+        header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/login.php");
+    }
+    ?>
 </head>
 <body>
     <?php 

@@ -9,11 +9,17 @@
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/generalControlPanel.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/eventsControlPanel.css">
 
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="/mesonmontesdetoledo.com/public/js/eventsControlPanel.js"></script>
+
+    <?php 
+    require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); 
+    session_start();
+    if (!isset($_SESSION['user'])) {
+        header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/login.php");
+    }
+    ?>
 </head>
 <body>
     <?php 
@@ -26,7 +32,6 @@
 
         <section>
             <?php 
-            require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); 
             require_once(ROOT . "app/src/models/Event.php");
 
             $event = new Event();

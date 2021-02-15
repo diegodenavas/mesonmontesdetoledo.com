@@ -64,7 +64,7 @@ section p{
 }
 
 .paragraphSectionContainer2{
-    width: 50%;
+    width: 40%;
     margin-bottom: 5%;
 }
 
@@ -96,6 +96,8 @@ section p{
     background-color: rgb(153, 0, 0);
 }
 
+
+
 .opinions{
     background-color: rgba(33, 28, 45, 0.8);
     display: flex;
@@ -125,8 +127,42 @@ section p{
 }
 
 .gallery{
-    width: 50%;
+    width: 65%;
+    height: 120px;
     box-shadow: black 0px 0px 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.gallery img{
+    width: 20px;
+    padding: 5%;
+    cursor: pointer;
+    z-index: 1000000;
+}
+
+#gallery1img{
+    background-image: url("/mesonmontesdetoledo.com/public/images/gallery/fachada1");
+}
+
+#gallery2img{
+    background-image: url("/mesonmontesdetoledo.com/public/images/gallery/chuleton.jpg");
+}
+
+#gallery3img{
+    background-image: url("/mesonmontesdetoledo.com/public/images/gallery/rutaLasTorres.jpg");
+}
+
+.radioGallery1{
+    background-color: black;
+}
+
+#sliderContainer1{
+    width: 70%;
 }
 
 .gallery3img{
@@ -140,8 +176,11 @@ section p{
 }
 
 #eventImgContainer{
-    width: 90%;
+    width: 80%;
     margin: 5% auto;
+    padding: 5%;
+    padding-bottom: 10%;
+    border-bottom: rgba(33, 28, 45, 0.8) 3px solid;
 }
 
 #eventImg{
@@ -154,6 +193,10 @@ section p{
 /*MEDIAS QUERIES*/
 
 @media (min-width: 600px) {
+    #eventImgContainer{
+        width: 60%;
+    }
+    
     .sectionContainer>p{
         padding: 0;
     }
@@ -162,29 +205,42 @@ section p{
         background-position: center bottom;
     }
 
+    .gallery{
+        width: 50%;
+        height: 300px;
+    }
+
+    .gallery img{
+        width: 50px;
+        padding: 7%;
+    }
+
     .paragraphSectionContainer{
-        font-size: 2.3em;
+        font-size: 1.7em;
         position: relative;
-        background-image: url("/mesonmontesdetoledo.com/public/images/fondoParticulas.png");
+        background-color: rgb(253, 247, 235);
         background-position: center center;
         background-size: cover;
         padding: 5%;
         width: 30%;
-        border-top: rgb(126, 0, 0) 7px solid;
-        border-bottom: rgb(126, 0, 0) 7px solid;
+        border: rgb(126, 0, 0) 7px solid;
     }
 
     .paragraphSectionContainer2{
         position: relative;
-        font-size: 2.5em;
-        border-top: rgb(126, 0, 0) 7px solid;
-        border-bottom: rgb(126, 0, 0) 7px solid;
+        font-size: 2em;
+        border: rgb(126, 0, 0) 7px solid;
         margin-bottom: 0;
-        padding: 5% 0;
+        padding: 3% 0;
         top: 100px;
-        background-image: url("/mesonmontesdetoledo.com/public/images/fondoParticulas.png");
+        background-color: rgb(253, 247, 235);
         background-position: center center;
         background-size: cover;
+    }
+
+    .paragraphSectionContainer2>p{
+        width: 70%;
+        margin: auto;
     }
 
     .paragraphSectionContainer:first-child{
@@ -214,11 +270,11 @@ section p{
     }
 
     .commentsContainer>img{
-        width: 150px;
+        width: 100px;
     }
 
     .commentsContainer>p{
-        font-size: 1.7em;
+        font-size: 1em;
     }
 
     .opinions{
@@ -226,7 +282,33 @@ section p{
     }
 
     .opinions>img{
-        width: 5%;
+        width: 50px;
         padding: 2%;
     }
+}
+
+
+@media (min-width: 920px) {
+
+    .gallery{
+        height: 600px;
+    }
+
+    .paragraphSectionContainer, .paragraphSectionContainer2{
+        font-size: 2.5em;
+    }
+
+    .commentsContainer>p{
+        font-size: 1.5em;
+    }
+
+    .opinions{
+        padding-left: 4%;
+    }
+
+    .gallery img{
+        width: 70px;
+        padding: 10%;
+    }
+
 }

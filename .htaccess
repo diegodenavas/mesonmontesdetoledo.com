@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^carta$ app/src/views/carta.php
+RewriteRule ^contacto$ app/src/views/contacto.php
+RewriteRule ^horario$ app/src/views/horario.php
+RewriteRule ^terraza$ app/src/views/terraza.php

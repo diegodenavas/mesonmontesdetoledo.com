@@ -73,21 +73,31 @@ window.onload = function() {
     //This function close the modalWindow and restores it to the initial state
     modalWindow.click(function(e) {
         if(e.target.id == "modalWindowPlate" && e.target.parentNode.id != "recordFormPlate"){
-            modalWindow.fadeOut(150);
-            $("#inputIdPlate").val("");
-            $("#inputNamePlate").val("");
-            $("#inputPricePlate").val("");
-            $("#selectCategoryPlate").show();
-            $("label[for='selectCategoryPrice']").show();
-            $("#recordFormPlate").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
-            $("#inputNamePlate").attr("required", "");
-            $("#inputPricePlate").attr("required", "");
-            $("#formCenterContainer").show();
-            $("#formCenterContainerDelete").hide();
-            $("#inputSubmitPlates").val("Añadir");
-            scrollEnabled();
+            closeForm();
         }
     });
+
+    $("#closeFormMobileX").click(function(e) {
+        closeForm();
+    });
+
+
+    function closeForm() {
+        modalWindow.fadeOut(150);
+        $("#inputIdPlate").val("");
+        $("#inputNamePlate").val("");
+        $("#inputPricePlate").val("");
+        $("#selectCategoryPlate").show();
+        $("label[for='selectCategoryPrice']").show();
+        $("#recordFormPlate").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
+        $("#inputNamePlate").attr("required", "");
+        $("#inputPricePlate").attr("required", "");
+        $("#formCenterContainer").show();
+        $("#formCenterContainerDelete").hide();
+        $("#inputSubmitPlates").val("Añadir");
+        scrollEnabled();
+    }
+
 
 
 

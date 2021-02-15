@@ -13,10 +13,11 @@
             showMenuMobile();
             scrollToNav();
             scrollDisabled();
+            changeMenuIcon();
         }else{
             hideMenuMobile();
-            scrollToInitialPoint();
             scrollEnabled();
+            changeMenuIcon();
         }
     }
 
@@ -33,13 +34,18 @@
         html[0].style.overflow = "hidden";
     }
 
+    function changeMenuIcon() {      
+        if($("#menuIcon").attr("src") == "/mesonmontesdetoledo.com/public/images/webIcons/iconoMenuPlegado.png"){
+            $("#menuIcon").attr("src", "/mesonmontesdetoledo.com/public/images/webIcons/iconoMenuPlegado2.png");
+        }else{
+            $("#menuIcon").attr("src", "/mesonmontesdetoledo.com/public/images/webIcons/iconoMenuPlegado.png");
+        }
+        
+    }
+
     
     function hideMenuMobile(){
         $("#menuMobileContainer").fadeOut(200);
-    }
-
-    function scrollToInitialPoint() {
-        $('html, body').animate({scrollTop: $("header").offset().top});
     }
 
     function scrollEnabled(){

@@ -4,7 +4,7 @@ require_once(ROOT . "app/src/models/Plate.php");
 require_once(ROOT . "app/src/models/PlateCategory.php");
 
 $plateCategory = new PlateCategory();
-$resulsetPlateCategory = $plateCategory->getAll();
+$resulsetPlateCategory = $plateCategory->getAllOrderByAsc("importance");
 $plateCategoriesList = $plateCategory->getObject($resulsetPlateCategory);
 
 $count=0;
@@ -35,6 +35,7 @@ foreach ($plateCategoriesList as $plateCategory) {
         <input type='hidden' value='".$plateCategory->getId()."' id='categoryId".$count."' name='categoryId".$count."' class='categoryId'>
         <input type='hidden' value='".$plateCategory->getName()."' id='categoryName".$count."' name='categoryName".$count."' class='categoryName'>
         <input type='hidden' value='".$plateCategory->getIconRoot()."' id='categoryIconRoot".$count."' name='categoryIconRoot".$count."' class='categoryIcon'>
+        <input type='hidden' value='".$plateCategory->getImportance()."' id='categoryImportance".$count."' name='categoryImportance".$count."' class='categoryImportance'>
      </tr>";
     
     $count++;

@@ -41,18 +41,28 @@ window.onload = function() {
     //This function close the modalWindow and restores it to the initial state
     modalWindow.click(function(e) {
         if(e.target.id == "modalWindowEvent" && e.target.parentNode.id != "recordFormEvent"){
-            modalWindow.fadeOut(150);
-            $("#inputIdEvent").val("");
-            $("#inputNameEvent").val("");
-            $("#inputSubmitEvents").val("Añadir");
-            $("#inputSubmitEvents").css( "background-color", "rgb(0, 228, 0)");
-            $("#recordFormEvent").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
-            $("#formCenterContainerDelete").hide();
-            $("#formCenterContainer").show();
-            $("#inputNameEvent").attr("required", "");
-            scrollEnabled();
+            closeForm();
         }
     });
+
+
+    $("#closeFormMobileX").click(function(e) {
+            closeForm();
+    });
+
+
+    function closeForm() {
+        modalWindow.fadeOut(150);
+        $("#inputIdEvent").val("");
+        $("#inputNameEvent").val("");
+        $("#inputSubmitEvents").val("Añadir");
+        $("#inputSubmitEvents").css( "background-color", "rgb(0, 228, 0)");
+        $("#recordFormEvent").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
+        $("#formCenterContainerDelete").hide();
+        $("#formCenterContainer").show();
+        $("#inputNameEvent").attr("required", "");
+        scrollEnabled();
+    }
 
 
 

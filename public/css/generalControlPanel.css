@@ -187,9 +187,8 @@ table td, table th{
 
 .recordsTh{
     background-color: rgb(145, 145, 255) !important;
-    font-weight: bold;
-    font-size: 1.3em;
     color: white;
+    text-shadow: 1px 1px 1px black;
 }
 
 .recordsIcons{
@@ -284,6 +283,17 @@ table td, table th{
     margin-bottom: 10%;
 }
 
+#closeFormMobile{
+    justify-content: flex-end;
+    display: none;
+}
+
+#closeFormMobile>img{
+    text-align: right;
+    padding: 10%;
+    cursor: pointer;
+}
+
 
 /*MEDIAS QUERIES*/
 @media (max-width: 720px) {
@@ -321,4 +331,26 @@ table td, table th{
     #homeInstructionsContainer h2{
         font-size: 1.7em;
     }
+
+    .recordForm{
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+    }
+
+    #formCenterContainer{
+        padding-top: 25%;
+        width: 50%;
+    }
+
+    #formCenterContainerDelete{
+        padding-top: 30%;
+        width: 80%;
+    }
+
+    #closeFormMobile{
+        display: flex;
+    }
+
+
 }

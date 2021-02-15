@@ -5,7 +5,7 @@
     background-color: rgb(250, 250, 250);
 }
 
-#formLogin{
+#formLogin, #formRegister{
     width: 50%;
     margin: auto;
     padding: 20% 0;
@@ -18,7 +18,7 @@
     margin: auto;
 }
 
-.formContainer input[type='text']{
+.formContainer input[type='text'], .formContainer input[type='password']{
     margin-bottom: 10%;
     height: 17px;
 }
@@ -27,8 +27,56 @@
     margin-bottom: 3%;
 }
 
-#loginSubmit{
+#loginSubmit, #registerSubmit{
     width: 80px;
     height: 30px;
     margin-top: 20%;
+}
+
+#registerErrorMessage{
+    color: rgb(209, 27, 27);
+    position: relative;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+#registerDuplicateUserError{
+    color: rgb(209, 27, 27);
+    position: relative;
+    font-size: 0.8em;
+    text-align: center;
+}
+
+
+
+/*MEDIAS QUERIES*/
+
+@media (max-width: 1000px) {
+
+    .formContainer{
+        width: 50%;
+    }
+
+    #formLogin{
+        width: 50%;
+        height: 100%;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .formContainer{
+        width: 100%;
+        box-shadow: none;
+        background-color: inherit;
+    }
+
+    #formLogin{
+        width: 60%;
+        height: 100%;
+        padding-top: 30%;
+    }
+
 }

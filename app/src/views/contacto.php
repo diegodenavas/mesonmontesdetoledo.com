@@ -35,12 +35,19 @@
                 <p class="contactCardDescription">Información y reservas</p>
                 <div class="telephones">
                     <img src="/mesonmontesdetoledo.com/public/images/webIcons/telefono.png" alt="" class="telephoneIcon">
-                    <p>925 409 146</p>
+                    <a href="tel:925 409 146"><p>925 409 146</p></a>
                 </div>
                 <div class="telephones">
                     <img src="/mesonmontesdetoledo.com/public/images/webIcons/movil.png" alt="" class="telephoneIcon">
-                    <p>696 731 232</p>
+                    <a href="tel:696 731 232"><p>696 731 232</p></a>
                 </div>
+            </div>
+
+            <div id='maps'>
+                <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" 
+                marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=666&amp;hl=es&amp;q=Av.%20Montes
+                %20de%20Toledo,%208,%2013194%20Navas%20de%20Estena,%20Cdad.%20Real+(Mes%C3%B3n%20Montes%20de%20Toledo)&amp;
+                t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
             </div>
         </div>
     </section>

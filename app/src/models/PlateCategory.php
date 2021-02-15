@@ -5,19 +5,20 @@ require_once(ROOT . "app/core/IResulsetToObject.php");
 
 class PlateCategory extends ModelCore implements IResulsetToObject
 { 
-    private $id, $name, $iconRoot;
+    private $id, $name, $iconRoot, $importance;
     
     public function __construct()
     {
         parent::__construct(get_class($this));
     }
 
-    public static function setPlateCategoryWhithAllProperties(int $id, string $name, string $iconRoot){
+    public static function setPlateCategoryWhithAllProperties(int $id, string $name, string $iconRoot, int $importance){
         $plateCategory = new PlateCategory();
 
         $plateCategory->setId($id);
         $plateCategory->setName($name);
         $plateCategory->setIconRoot($iconRoot);
+        $plateCategory->setImportance($importance);
 
         return $plateCategory;
     }
@@ -27,7 +28,7 @@ class PlateCategory extends ModelCore implements IResulsetToObject
         $plateCategories = array();
 
         foreach ($resulset as $row) {
-            array_push($plateCategories, PlateCategory::setPlateCategoryWhithAllProperties($row[0], $row[1], $row[2]));
+            array_push($plateCategories, PlateCategory::setPlateCategoryWhithAllProperties($row[0], $row[1], $row[2], $row[3]));
         }
 
         return $plateCategories;
@@ -38,10 +39,10 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     {
         $this->setConnection();
 
-        $sql = "INSERT INTO $this->dbTable(name, iconRoot) VALUES(?, ?)";
+        $sql = "INSERT INTO $this->dbTable(name, iconRoot, importance) VALUES(?, ?, ?)";
         
         $statement = $this->connection->prepare($sql);
-        $response = $statement->execute(array($values[0], $values[1]));
+        $response = $statement->execute(array($values[0], $values[1], $values[2]));
 
         if($response == true){
             $statement = null;
@@ -59,9 +60,9 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     {
         $this->setConnection();
 
-        $sql = "UPDATE $this->dbTable SET name = ?, iconRoot = ? WHERE id = ?";
+        $sql = "UPDATE $this->dbTable SET name = ?, iconRoot = ?, importance = ? WHERE id = ?";
         $statement = $this->connection->prepare($sql);
-        $response = $statement->execute(array($values[0], $values[1], $id));
+        $response = $statement->execute(array($values[0], $values[1], $values[2], $id));
 
         if($response == true){
             $statement = null;
@@ -73,6 +74,78 @@ class PlateCategory extends ModelCore implements IResulsetToObject
         }
 
     }
+
+
+    public function addCategoryWithPosition(string $name, string $icon, int $importance){
+        $this->setConnection();
+        $pdoConnection = $this->getConnection();
+
+        try{
+            $pdoConnection->beginTransaction();
+
+            $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance");
+            $pdoConnection->exec("INSERT INTO platecategory(name, iconRoot, importance) VALUES('$name', '$icon', $importance)");
+            $response = $pdoConnection->commit();
+        }catch(Exception $e){
+            $pdoConnection->rollBack();
+            echo $e->getMessage();
+        }
+
+        $statement = null;
+        $this->connection = null;
+
+        return $response;
+
+    }
+
+
+    //IMPLEMENTAR
+    public function deleteCategoryWithPosition(string $id, int $importance){
+        $this->setConnection();
+        $pdoConnection = $this->getConnection();
+
+        try{
+            $pdoConnection->beginTransaction();
+
+            $pdoConnection->exec("DELETE FROM platecategory WHERE id=$id");
+            $pdoConnection->exec("UPDATE platecategory SET importance=importance-1 WHERE importance > $importance");
+            $response = $pdoConnection->commit();
+        }catch(Exception $e){
+            $pdoConnection->rollBack();
+            echo $e->getMessage();
+        }
+
+        $statement = null;
+        $this->connection = null;
+
+        return $response;
+
+    }
+
+
+    //IMPLEMENTAR
+    public function updateCategoryWithPosition(string $name, string $icon, int $importance){
+        $this->setConnection();
+        $pdoConnection = $this->getConnection();
+
+        try{
+            $pdoConnection->beginTransaction();
+
+            $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance");
+            $pdoConnection->exec("INSERT INTO platecategory(name, iconRoot, importance) VALUES('$name', '$icon', $importance)");
+            $response = $pdoConnection->commit();
+        }catch(Exception $e){
+            $pdoConnection->rollBack();
+            echo $e->getMessage();
+        }
+
+        $statement = null;
+        $this->connection = null;
+
+        return $response;
+
+    }
+
 
 
     public function setId($id){
@@ -100,6 +173,15 @@ class PlateCategory extends ModelCore implements IResulsetToObject
 
     public function getIconRoot(){
         return $this->iconRoot;
+    }
+
+
+    public function setImportance(int $importance){
+        $this->importance = $importance;
+    }
+
+    public function getImportance(){
+        return $this->importance;
     }
 
 }

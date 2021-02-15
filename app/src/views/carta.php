@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/general.css">
     <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/carta.css">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Elsie&display=swap" rel="stylesheet">
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <script src="/mesonmontesdetoledo.com/public/js/hidePlates.js"></script>

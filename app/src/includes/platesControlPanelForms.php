@@ -1,5 +1,8 @@
 <div id='modalWindowPlate' class='modalWindow'>
     <form id='recordFormPlate' class='recordForm' action='/mesonmontesdetoledo.com/app/src/controllers/' method='POST'>
+        <div id='closeFormMobile'>
+            <img src="/mesonmontesdetoledo.com/public/images/webIcons/close.png" alt="cerrar ventana" id="closeFormMobileX">
+        </div>
         <div id='formCenterContainerDelete'>
             <p></p>
         </div>
@@ -8,7 +11,7 @@
             <label for="inputNamePlate">Nombre del plato</label>
             <input type='text' value='' id='inputNamePlate' name='inputNamePlate'required>
             <label for="inputPricePlate">Precio del plato</label>
-            <input type='text' value='' id='inputPricePlate' name='inputPricePlate'required>
+            <input type='text' value='' id='inputPricePlate' name='inputPricePlate' required>
             <label for="selectCategoryPrice">Categoría del plato</label>
 
             <select id='selectCategoryPlate' name='selectCategoryPlate'required>

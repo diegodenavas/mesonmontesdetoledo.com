@@ -29,8 +29,9 @@ header>img{
 }
 
 #headerInformationContainer{
-    height: 80%;
+    height: 90%;
     position: absolute;
+    top: 25px;
     right: 70px;
     left: 40px;
     display: flex;
@@ -57,6 +58,11 @@ header h1{
 #bookings{
     font-size: 2.2vw;
     vertical-align: bottom;
+}
+
+#bookings a:link, #bookings a:visited, #bookings a:active{
+    text-decoration: none;
+    color: rgb(180, 180, 255);
 }
 
 #icono2Header{
@@ -86,6 +92,7 @@ section{
     background-color: rgba(219, 199, 164, 0.8);
     border-top: rgb(191, 168, 128) 1px solid;
     border-bottom: rgb(191, 168, 128) 1px solid;
+    font-family: 'Original Surfer', cursive;
 }
 
 .sectionTitle>h2{
@@ -212,21 +219,70 @@ nav{
 
 /*FOOTER*/
 footer{
-    background-color:#1e1e24;
+    background-color: rgb(46, 47, 49);
     color: white;
+    padding: 3% 5% 1% 5%;
+    font-size: 0.8em;
     text-align: center;
-    box-shadow: black 0px -1px 5px 1px;
+    line-height: 115%;
+    font-family: 'Times New Roman', Times, serif;
+    border-top: rgb(126, 0, 0) 3px solid;
 }
 
-footer>p{
-    font-size: 2vw;
-    width: 90%;
-    margin: auto;
-    padding: 1% 0;
+footer a:visited, footer a:link, footer a:active{
+    text-decoration: none;
+    color: white;
 }
 
-footer>p:first-child{
-    border-bottom: grey 2px solid;
+.footerCenterContainer{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3%;
+    border-bottom: rgb(0, 0, 0) 1px solid;
+    text-align: left;
+}
+
+.footerCenterContainer>div:first-child{
+    width: 50%;
+}
+
+.footerCenterContainer>div:last-child{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footerCenterContainer>div:last-child>ul{
+    box-sizing: content-box;
+}
+
+.footerCenterContainer>div>p{
+    margin-bottom: 4%;
+}
+
+.footerCenterContainer>div>p{
+    margin-bottom: 4%;
+}
+
+.footerAdress{
+    padding: 3% 0;
+    border-top: rgb(68, 68, 68) 1px solid;
+    border-bottom: rgb(0, 0, 0) 1px solid;
+    font-size: 0.9em;
+}
+
+.footerAdress>p:last-child{
+    color: rgb(138, 223, 121);
+}
+
+.footerAuthor{
+    padding-top: 1%;
+    border-top: rgb(68, 68, 68) 1px solid;
+    font-size: 0.7em;
+}
+
+footer a:hover{
+    color: rgb(241, 243, 130);
 }
 
 
@@ -237,15 +293,6 @@ footer>p:first-child{
     header{
         height: 100vh;
         justify-content: center;
-    }
-
-    nav{
-        position: absolute;
-        top: 0;
-        left: 0;
-        position: fixed;
-        width: 100%;
-        z-index: 1000;
     }
 
     section{
@@ -262,6 +309,7 @@ footer>p:first-child{
 
     #headerInformationContainer{
         height: 70%;
+        top: auto;
         text-align: center;
         justify-content: space-around;
     }
@@ -279,11 +327,7 @@ footer>p:first-child{
     }
 
     #bookings{
-        font-size: 1vw;
-    }
-
-    .menuMobile>a:first-child{
-        border-top: none;
+        font-size: 1.5vw;
     }
 
     #icono2Header{
@@ -295,6 +339,81 @@ footer>p:first-child{
         width: 80px;
         height: 80px;
         top: 0;
+    }
+
+    nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        background-color: initial;
+    }
+
+    #menuIconContainer{
+        background-color: rgba(255 , 255, 255, 0.8);
+    }
+
+    #menuMobileContainer{
+        height: auto;
+        position: relative;
+        background-color: inherit;
+        left: 10%;
+    }
+
+    .menuMobile{
+        flex-direction: row;
+        display: flex;
+    }
+
+    .menuMobile>a{
+        border: rgba(255 , 255, 255, 0.8) 1px solid;
+        padding: 0 ;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        font-size: 0.8em;
+        background-color: rgba(255 , 255, 255, 0.8);
+    }
+
+    .menuMobile>a:hover{
+        border: rgb(126, 0, 0);
+        background-color: rgba(126, 0, 0, 0.8);
+        color: white;
+    }
+
+    .menuMobile>a:first-child{
+        border-top: rgba(255 , 255, 255, 0.8) 1px solid;
+    }
+
+    .menuMobile>a:first-child:hover{
+        border-top: rgb(126, 0, 0);
+    }
+
+    .menuMobile>a:last-child{
+        border-bottom: rgba(255 , 255, 255, 0.8) 1px solid;
+    }
+
+    .menuMobile>a:last-child:hover{
+        border-bottom: rgb(126, 0, 0);
+    }
+
+    .arrowIcon{
+        display: none;
+    }
+
+    footer{
+        background-color: rgb(46, 47, 49);
+        color: white;
+        padding: 3% 5%;
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 115%;
+    }
+
+    .footerCenterContainer{
+        padding: 0 10% 3% 10%;
     }
 
 }

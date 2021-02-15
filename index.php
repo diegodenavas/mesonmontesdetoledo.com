@@ -14,6 +14,8 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+    <script src="/mesonmontesdetoledo.com/public/js/gallery.js"></script>
+
     <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
 </head>
 <body>
@@ -38,12 +40,15 @@
 
         <div class="sectionContainer" id='sectionContainer1'>
             <div class="paragraphSectionContainer">
-                <p>Especialistas en clientes que regresan porque saben donde se 
+                <p>Clientes que regresan porque saben donde se 
                     encuentra la buena mesa
                 </p>
-                <a href="/mesonmontesdetoledo.com/app/src/views/contacto.php"><p class='paragraphSectionA'>Donde estamos</p></a>
+                <a href="/mesonmontesdetoledo.com/contacto"><p class='paragraphSectionA'>Donde estamos</p></a>
             </div>
-            <img src="/mesonmontesdetoledo.com/public/images/gallery/BarraCaptura.JPG" alt="" class="gallery">
+            <div class="gallery" id="gallery1img">
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
+            </div>
         </div>
 
         <div class="opinions">
@@ -55,11 +60,14 @@
         </div>
 
         <div class="sectionContainer" id='sectionContainer2'>
-            <img src="/mesonmontesdetoledo.com/public/images/gallery/PlatoCaptura.JPG" alt="" class="gallery" id="gallery2img">
+            <div class="gallery" id="gallery2img">
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
+            </div>
             <div class="paragraphSectionContainer">
                 <p>Especialistas en carne de venado, de ternera, y vaca
                 </p>
-                <a href="/mesonmontesdetoledo.com/app/src/views/carta.php"><p class='paragraphSectionA'>Nuestra carta</p></a>
+                <a href="/mesonmontesdetoledo.com/carta"><p class='paragraphSectionA'>Nuestra carta</p></a>
             </div>
         </div>
 
@@ -74,9 +82,12 @@
         <div class="sectionContainer" id='sectionContainer3'>
             <div class="paragraphSectionContainer2">
                 <p>Disfruta de la mejor comida en pleno Parque Nacional de Cabañeros</p>
-                <a href="/mesonmontesdetoledo.com/app/src/views/horario.php"><p class='paragraphSectionA'>Horario</p></a>
+                <a href="/mesonmontesdetoledo.com/horario"><p class='paragraphSectionA'>Horario</p></a>
             </div>
-            <img src="/mesonmontesdetoledo.com/public/images/gallery/rutaLasTorres.jpg" alt="" class="gallery3img">
+            <div class="gallery" id="gallery3img">
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
+            </div>
         </div>
     </section>
 

@@ -12,16 +12,17 @@
 .categoryTitle{
     display: flex;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Elsie', cursive;
     padding: 5% 0;
     cursor: pointer;
+    font-size: 1.3em;
+    align-items: center;
 }
 
 .categoryCenterContainer{
     display: flex;
     justify-content: space-between;
     width: 100%;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -38,8 +39,7 @@
 
 .platesContainer{
     padding-bottom: 5%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    font-size: 0.8em;
+    font-family: 'Josefin Slab', serif;
     display: none;
 }
 
@@ -67,7 +67,7 @@
     }
 
     .categoryTitle{
-        font-size: 1.2em;
+        font-size: 1.7em;
     }
 
     .menuCategoryIcon{
@@ -76,7 +76,7 @@
     }
 
     .platesContainer{
-        font-size: 1em;
+        font-size: 1.5em;
     }
 
 }

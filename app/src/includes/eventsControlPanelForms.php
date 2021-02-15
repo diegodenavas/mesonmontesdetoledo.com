@@ -1,5 +1,8 @@
 <div class='modalWindow' id='modalWindowEvent'>
     <form id='recordFormEvent' class='recordForm' action='/mesonmontesdetoledo.com/app/src/controllers/' method='POST' enctype='multipart/form-data'>
+        <div id='closeFormMobile'>
+            <img src="/mesonmontesdetoledo.com/public/images/webIcons/close.png" alt="cerrar ventana" id="closeFormMobileX">
+        </div>
         <div id='formCenterContainerDelete'>
             <p></p>
         </div>

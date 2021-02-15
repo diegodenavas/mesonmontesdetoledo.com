@@ -37,9 +37,11 @@ window.onload = function() {
 
     deleteButton.click(function() {
         let id = $(this).parent().siblings(".categoryId").attr("value");
+        let importance = $(this).parent().siblings(".categoryImportance").attr("value");
         scrollDisabled();
         modalWindow.fadeIn(150);
         $("#inputIdCategory").val(id);
+        $("#inputImportanceCategory").val(importance);
         $("#recordFormCategory").attr("action", $("#recordFormCategory").attr("action") + "deleteCategoryController.php");
         $("#formCenterContainer").hide();
         $("#inputNameCategory").removeAttr("required");
@@ -47,6 +49,7 @@ window.onload = function() {
         $("#formCenterContainerDelete>p").html("¿Deseas borrar la categoría con ID: " + id + "?<br><br>Si lo haces perderás todos los platos de ésta categoría");
         $("#inputSubmitCategories").val("Eliminar");
         $("#inputSubmitCategories").css( "background-color", "rgb(255, 77, 77)");
+        $("#inputImportanceCategory").hide();
     });
 
 
@@ -72,21 +75,32 @@ window.onload = function() {
     //This function close the modalWindow and restores it to the initial state
     modalWindow.click(function(e) {
         if(e.target.id == "modalWindowCategory" && e.target.parentNode.id != "recordFormCategory"){
-            modalWindow.fadeOut(150);
-            selectIconContainer.hide();
-            $("#imgFormIcon").attr("src", "");
-            $("#imgFormIcon").attr("alt", "");
-            $("#inputIdCategory").val("");
-            $("#inputIconCategory").val("");
-            $("#inputNameCategory").val("");
-            $("#recordFormCategory").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
-            $("#inputNameCategory").attr("required", "");
-            $("#formCenterContainer").show();
-            $("#formCenterContainerDelete").hide();
-            $("#inputSubmitCategories").val("Añadir");
-            scrollEnabled();
+            closeForm();
         }
     });
+
+
+    $("#closeFormMobileX").click(function(e) {
+        closeForm();
+    });
+
+
+    function closeForm() {
+        modalWindow.fadeOut(150);
+        selectIconContainer.hide();
+        $("#imgFormIcon").attr("src", "");
+        $("#imgFormIcon").attr("alt", "");
+        $("#inputIdCategory").val("");
+        $("#inputIconCategory").val("");
+        $("#inputNameCategory").val("");
+        $("#recordFormCategory").attr("action", "/mesonmontesdetoledo.com/app/src/controllers/");
+        $("#inputNameCategory").attr("required", "");
+        $("#formCenterContainer").show();
+        $("#formCenterContainerDelete").hide();
+        $("#inputSubmitCategories").val("Añadir");
+        $("#inputImportanceCategory").show();
+        scrollEnabled();
+    }
 
 
 

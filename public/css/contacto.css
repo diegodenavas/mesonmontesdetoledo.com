@@ -28,13 +28,25 @@ section{
     justify-content: center;
     align-items: center;
     margin: auto;
-    padding-bottom: 2%;
+    padding-bottom: 4%;
     text-align: center;
 }
 
+.telephones a:link, .telephones a:visited, .telephones a:active{
+    text-decoration: none;
+    color: rgb(61, 61, 245);
+    font-weight: bold;
+}
+
 .telephoneIcon{
-    width: 5%;
+    width: 15px;
     padding-right: 2%;
+}
+
+#maps{
+    box-shadow: black 0px 0px 5px;
+    margin-top: 10%;
+    height: 250px;
 }
 
 /*MEDIAS QUERIES*/
@@ -53,8 +65,16 @@ section{
         font-size: 1em;
     }
 
+    .telephones{
+        padding-bottom: 2%;
+    }
+
     .telephoneIcon{
-        width: 3%;
+        width: 20px;
+    }
+
+    #maps{
+        height: 500px;
     }
 
 }

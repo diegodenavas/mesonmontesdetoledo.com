@@ -1,17 +1,18 @@
 window.onload = function(){
 
-    var platesContainer = document.getElementsByClassName("platesContainer");
-    var categoryTitle = document.getElementsByClassName("categoryTitle");
+    $(".categoryTitle").click(function(e) {
+        let display = $(this).siblings(".platesContainer").css("display");
 
+        let heightMenu = $("#menuIconContainer").height();
 
-    for (let i = 0; i < categoryTitle.length; i++) {
-
-        categoryTitle[i].addEventListener("click", function(){
-
-            if (platesContainer[i].style.display == "none" || platesContainer[i].style.display == "") platesContainer[i].style.display = "block";
-            else platesContainer[i].style.display = "none";
-
-        }, false);
-    }
+        if(display == "none"){
+            $(this).siblings(".platesContainer").slideDown();
+            $(this).find(".menuCategoryArrowIcon").attr("src", "/mesonmontesdetoledo.com/public/images/webIcons/despliegue2.png");
+            $('html, body').animate({scrollTop: $(this).offset().top - heightMenu});
+        }else{
+            $(this).siblings(".platesContainer").slideUp();
+            $(this).find(".menuCategoryArrowIcon").attr("src", "/mesonmontesdetoledo.com/public/images/webIcons/despliegue.png");
+        }
+    })
 
 }

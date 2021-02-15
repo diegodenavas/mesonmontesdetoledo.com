@@ -50,7 +50,7 @@
 
             <div class="season">
                 <div class="menuCategory seasonTitle">
-                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/iconoInvierno.png" alt="" class="menuCategoryIcon">
+                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/iconoVerano.png" alt="" class="menuCategoryIcon">
                     <h3 class="categoryName">Verano (julio - septiembre)</h3>
                 </div>
 
