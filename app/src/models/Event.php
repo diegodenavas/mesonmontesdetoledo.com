@@ -1,7 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php");
-require_once(ROOT . "app/core/ModelCore.php");
-require_once(ROOT . "app/core/IResulsetToObject.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/src/config/global.php");
+require_once(ROOT . "app/src/core/ModelCore.php");
+require_once(ROOT . "app/src/core/IResulsetToObject.php");
 
 class Event extends ModelCore implements IResulsetToObject
 { 
@@ -66,7 +66,6 @@ class Event extends ModelCore implements IResulsetToObject
         if($response == true){
             $statement = null;
             $this->connection = null;
-            header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/plates.php");
         }else{
             $statement = null;
             $this->connection = null;

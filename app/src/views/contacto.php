@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Donde estamos</title>
 
-    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
-    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/general.css">
-    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/contacto.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/app/public/css/reset.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/app/public/css/general.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/app/public/css/contacto.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/src/config/global.php"); ?>
 </head>
 <body>
     <?php require_once(ROOT . "/app/src/includes/header.php"); ?>
@@ -34,11 +34,11 @@
                     Ciudad Real</p>
                 <p class="contactCardDescription">Información y reservas</p>
                 <div class="telephones">
-                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/telefono.png" alt="" class="telephoneIcon">
+                    <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/telefono.png" alt="" class="telephoneIcon">
                     <a href="tel:925 409 146"><p>925 409 146</p></a>
                 </div>
                 <div class="telephones">
-                    <img src="/mesonmontesdetoledo.com/public/images/webIcons/movil.png" alt="" class="telephoneIcon">
+                    <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/movil.png" alt="" class="telephoneIcon">
                     <a href="tel:696 731 232"><p>696 731 232</p></a>
                 </div>
             </div>

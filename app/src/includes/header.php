@@ -3,14 +3,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Original+Surfer&display=swap" rel="stylesheet">
 
 <header>
-    <img src="/mesonmontesdetoledo.com/public/images/iconoMeson2.png" alt="icono meson montes de toledo" id='topIconHeader'>
+    <img src="/mesonmontesdetoledo.com/app/public/images/iconoMeson2.png" alt="icono meson montes de toledo" id='topIconHeader'>
     <nav id='menuWebContainer'>
             <ul>
                 <a href="/mesonmontesdetoledo.com/index.php"><li>El mesón</li></a>
-                <a href="/mesonmontesdetoledo.com/app/src/views/carta.php"><li>Nuestra carta</li></a>
-                <a href="/mesonmontesdetoledo.com/app/src/views/terraza.php"><li>Terraza de verano</li></a>
-                <a href="/mesonmontesdetoledo.com/app/src/views/horario.php"><li>Horario</li></a>
-                <a href="/mesonmontesdetoledo.com/app/src/views/contacto.php"><li>Donde estamos</li></a>
+                <a href="/mesonmontesdetoledo.com/carta.php"><li>Nuestra carta</li></a>
+                <a href="/mesonmontesdetoledo.com/terraza.php"><li>Terraza de verano</li></a>
+                <a href="/mesonmontesdetoledo.com/horario.php"><li>Horario</li></a>
+                <a href="/mesonmontesdetoledo.com/contacto.php"><li>Donde estamos</li></a>
             </ul>
         </nav>
     <div id="headerInformationContainer">
@@ -20,5 +20,5 @@
         </div>
         <p id="bookings">Reservas: <a href="tel:925 409 146">925 409 146</a> y <a href="tel:696 731 232">696 731 232</a></p>
     </div>
-    <img id="icono2Header" src="/mesonmontesdetoledo.com/public/images/iconoMeson.png" alt="icono meson montes de toledo 2">
+    <img id="icono2Header" src="/mesonmontesdetoledo.com/app/public/images/iconoMeson.png" alt="icono meson montes de toledo 2">
 </header>

@@ -1,7 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php");
-require_once(ROOT . "app/core/ModelCore.php");
-require_once(ROOT . "app/core/IResulsetToObject.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/src/config/global.php");
+require_once(ROOT . "app/src/core/ModelCore.php");
+require_once(ROOT . "app/src/core/IResulsetToObject.php");
 
 class PlateCategory extends ModelCore implements IResulsetToObject
 { 
@@ -47,7 +47,6 @@ class PlateCategory extends ModelCore implements IResulsetToObject
         if($response == true){
             $statement = null;
             $this->connection = null;
-            header("Location: /mesonmontesdetoledo.com/app/src/views/controlPanel/categories.php");
         }else{
             $statement = null;
             $this->connection = null;
@@ -60,9 +59,9 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     {
         $this->setConnection();
 
-        $sql = "UPDATE $this->dbTable SET name = ?, iconRoot = ?, importance = ? WHERE id = ?";
+        $sql = "UPDATE $this->dbTable SET name = ?, iconRoot = ? WHERE id = ?";
         $statement = $this->connection->prepare($sql);
-        $response = $statement->execute(array($values[0], $values[1], $values[2], $id));
+        $response = $statement->execute(array($values[0], $values[1], $id));
 
         if($response == true){
             $statement = null;
@@ -99,7 +98,6 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     }
 
 
-    //IMPLEMENTAR
     public function deleteCategoryWithPosition(string $id, int $importance){
         $this->setConnection();
         $pdoConnection = $this->getConnection();
@@ -109,7 +107,7 @@ class PlateCategory extends ModelCore implements IResulsetToObject
 
             $pdoConnection->exec("DELETE FROM platecategory WHERE id=$id");
             $pdoConnection->exec("UPDATE platecategory SET importance=importance-1 WHERE importance > $importance");
-            $response = $pdoConnection->commit();
+            $pdoConnection->commit();
         }catch(Exception $e){
             $pdoConnection->rollBack();
             echo $e->getMessage();
@@ -117,33 +115,42 @@ class PlateCategory extends ModelCore implements IResulsetToObject
 
         $statement = null;
         $this->connection = null;
-
-        return $response;
-
     }
 
 
-    //IMPLEMENTAR
-    public function updateCategoryWithPosition(string $name, string $icon, int $importance){
+    public function updateCategoryWithPosition(int $id, string $name, string $icon, int $importance1, int $importance2){
         $this->setConnection();
         $pdoConnection = $this->getConnection();
 
         try{
-            $pdoConnection->beginTransaction();
+            if($importance1 < $importance2){
+                echo "entra aqui 1";
 
-            $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance");
-            $pdoConnection->exec("INSERT INTO platecategory(name, iconRoot, importance) VALUES('$name', '$icon', $importance)");
-            $response = $pdoConnection->commit();
+                $pdoConnection->beginTransaction();
+                $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance2");
+                $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon', importance=$importance2 WHERE id = $id");
+                $pdoConnection->exec("UPDATE platecategory SET importance=importance-1 WHERE importance > $importance1");
+                $pdoConnection->commit();
+            }
+            else if($importance1 > $importance2){
+                echo "entra aqui 2";
+
+                $pdoConnection->beginTransaction();
+                $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance2");
+                $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon', importance=$importance2 WHERE id = $id");
+                $pdoConnection->exec("UPDATE platecategory SET importance=importance-1 WHERE importance > $importance1");
+                $pdoConnection->commit(); 
+            }
+            else{
+                echo "entra aqui 3";
+                $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon' WHERE id = $id");
+            }
         }catch(Exception $e){
             $pdoConnection->rollBack();
             echo $e->getMessage();
         }
-
         $statement = null;
         $this->connection = null;
-
-        return $response;
-
     }
 
 

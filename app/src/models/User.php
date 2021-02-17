@@ -1,7 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php");
-require_once(ROOT . "app/core/ModelCore.php");
-require_once(ROOT . "app/core/IResulsetToObject.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/src/config/global.php");
+require_once(ROOT . "app/src/core/ModelCore.php");
+require_once(ROOT . "app/src/core/IResulsetToObject.php");
 
 class User extends ModelCore implements IResulsetToObject
 { 

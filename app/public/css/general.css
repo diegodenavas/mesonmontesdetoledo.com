@@ -1,0 +1,419 @@
+body{
+    position: relative;
+}
+
+/*HEADER*/
+header{
+    height: 200px;
+    background-image: url("/mesonmontesdetoledo.com/app/public/images/header1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+header>img{
+    width: 40px;
+    height: 40px;
+}
+
+#topIconHeader{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 0;
+}
+
+#headerInformationContainer{
+    height: 90%;
+    position: absolute;
+    top: 25px;
+    right: 70px;
+    left: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: end;
+}
+
+#headerTitle{
+    text-align: end;
+}
+
+header h1{
+    font-size: 5vw;
+    margin: 0;
+    font-family: 'Fredericka the Great', cursive;
+    padding-bottom: 2%;
+}
+
+#subtitle{
+    font-size: 3.5vw;
+}
+
+#bookings{
+    font-size: 2.2vw;
+    vertical-align: bottom;
+}
+
+#bookings a:link, #bookings a:visited, #bookings a:active{
+    text-decoration: none;
+    color: rgb(180, 180, 255);
+}
+
+#icono2Header{
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    bottom: 7%;
+    right: 3%;
+}
+
+
+
+/*SECTION*/
+section{
+    background-image: url("/mesonmontesdetoledo.com/app/public/images/fondo.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sectionBackgroundAlternative{
+    background-image: url("/mesonmontesdetoledo.com/app/public/images/fondo2.jpg")
+}
+
+.sectionTitle{
+    margin-bottom: 8%;
+    background-color: rgba(219, 199, 164, 0.8);
+    border-top: rgb(191, 168, 128) 1px solid;
+    border-bottom: rgb(191, 168, 128) 1px solid;
+    font-family: 'Original Surfer', cursive;
+}
+
+.sectionTitle>h2{
+    padding: 5% 7%;  
+}
+
+.centerContainer{
+    width: 90%;
+    margin: auto;
+}
+
+
+
+/*MENU*/
+nav{
+    background-color: rgba(255 , 255, 255, 0.5);
+    margin-bottom: 8%;
+}
+
+#menuWebContainer{
+    background-image: url("/mesonmontesdetoledo.com/app/public/images/contenedorMenu.png");
+    background-size: contain;
+    background-position: -100px 0px;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    position: relative;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: none;
+}
+
+#menuWebContainer>ul{
+    width: 63%;
+    height: 85%;
+    margin: auto;
+    padding-top: 2%;
+    font-size: 1.8vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#menuWebContainer>ul a:link, #menuWebContainer>ul a:visited, #menuWebContainer>ul a:active {
+    text-decoration:none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+#menuWebContainer>ul>a{
+    position: relative;
+}
+
+#menuWebContainer>ul>a:nth-child(2){
+    left: -4vw;
+}
+
+#menuWebContainer>ul>a:nth-child(3){
+    left: -8vw;
+}
+
+#menuWebContainer>ul>a:nth-child(4){
+    left: -12vw;
+}
+
+#menuWebContainer>ul>a:nth-child(5){
+    left: -16vw;
+}
+
+#menuIcon{
+    height: 50%;
+    margin-left: 10%;
+}
+
+#menuIcon{
+    cursor: pointer;
+}
+
+#menuIconContainer{
+    height: 40px;
+    display: flex;
+    align-items: center;
+}
+
+#menuMobileContainer{
+    height: 100vh;
+    background-color: rgba(255 , 255, 255, 0.5);
+    font-weight: bold;
+    display: none;
+    z-index: 1000000;
+}
+
+.menuMobile>a{
+    padding: 5%;
+    border-bottom: rgb(129, 129, 129) 1px solid;
+    display: flex;
+    align-items: center;
+}
+
+.menuMobile>a>li{
+    width: 100%;
+}
+
+.menuMobile>a:first-child{
+    border-top: rgb(129, 129, 129) 2px solid;
+}
+
+.menuMobile>a:last-child{
+    border-bottom: none;
+}
+
+.arrowIcon{
+    width: 20px;
+    padding: 0 2% 0 6%;
+}
+
+.menuMobile>a:link, .menuMobile>a:visited, .menuMobile>a:active {
+    text-decoration:none;
+    color: black;
+}
+
+
+
+/*FOOTER*/
+footer{
+    background-color: rgb(46, 47, 49);
+    color: white;
+    padding: 3% 5% 1% 5%;
+    font-size: 0.8em;
+    text-align: center;
+    line-height: 115%;
+    font-family: 'Times New Roman', Times, serif;
+    border-top: rgb(126, 0, 0) 3px solid;
+}
+
+footer a:visited, footer a:link, footer a:active{
+    text-decoration: none;
+    color: white;
+}
+
+.footerCenterContainer{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3%;
+    border-bottom: rgb(0, 0, 0) 1px solid;
+    text-align: left;
+}
+
+.footerCenterContainer>div:first-child{
+    width: 50%;
+}
+
+.footerCenterContainer>div:last-child{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.footerCenterContainer>div:last-child>ul{
+    box-sizing: content-box;
+}
+
+.footerCenterContainer>div>p{
+    margin-bottom: 4%;
+}
+
+.footerCenterContainer>div>p{
+    margin-bottom: 4%;
+}
+
+.footerAdress{
+    padding: 3% 0;
+    border-top: rgb(68, 68, 68) 1px solid;
+    border-bottom: rgb(0, 0, 0) 1px solid;
+    font-size: 0.9em;
+}
+
+.footerAdress>p:last-child{
+    color: rgb(138, 223, 121);
+}
+
+.footerAuthor{
+    padding-top: 1%;
+    border-top: rgb(68, 68, 68) 1px solid;
+    font-size: 0.7em;
+}
+
+footer a:hover{
+    color: rgb(241, 243, 130);
+}
+
+
+
+/*MEDIAS QUERIES*/
+
+@media (min-width: 600px) {
+    header{
+        height: 100vh;
+        justify-content: center;
+    }
+
+    section{
+        padding-top: 5%;
+    }
+
+    .sectionTitle{
+        font-size: 2em;
+    }
+
+    #menuIconContainer{
+        height: 45px;
+    }
+
+    #headerInformationContainer{
+        height: 70%;
+        top: auto;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    #headerTitle{
+        text-align: center;
+    }
+
+    header h1{
+        font-size: 5vw;
+    }
+
+    #subtitle{
+        font-size: 2vw;
+    }
+
+    #bookings{
+        font-size: 1.5vw;
+    }
+
+    #icono2Header{
+        width: 60px;
+        height: 60px;
+    }
+
+    #topIconHeader{
+        width: 80px;
+        height: 80px;
+        top: 0;
+    }
+
+    nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        background-color: initial;
+    }
+
+    #menuIconContainer{
+        background-color: rgba(255 , 255, 255, 0.8);
+    }
+
+    #menuMobileContainer{
+        height: auto;
+        position: relative;
+        background-color: inherit;
+        left: 10%;
+    }
+
+    .menuMobile{
+        flex-direction: row;
+        display: flex;
+    }
+
+    .menuMobile>a{
+        border: rgba(255 , 255, 255, 0.8) 1px solid;
+        padding: 0 ;
+        width: 100px;
+        height: 100px;
+        text-align: center;
+        font-size: 0.8em;
+        background-color: rgba(255 , 255, 255, 0.8);
+    }
+
+    .menuMobile>a:hover{
+        border: rgb(126, 0, 0);
+        background-color: rgba(126, 0, 0, 0.8);
+        color: white;
+    }
+
+    .menuMobile>a:first-child{
+        border-top: rgba(255 , 255, 255, 0.8) 1px solid;
+    }
+
+    .menuMobile>a:first-child:hover{
+        border-top: rgb(126, 0, 0);
+    }
+
+    .menuMobile>a:last-child{
+        border-bottom: rgba(255 , 255, 255, 0.8) 1px solid;
+    }
+
+    .menuMobile>a:last-child:hover{
+        border-bottom: rgb(126, 0, 0);
+    }
+
+    .arrowIcon{
+        display: none;
+    }
+
+    footer{
+        background-color: rgb(46, 47, 49);
+        color: white;
+        padding: 3% 5%;
+        font-size: 1.5em;
+        text-align: center;
+        line-height: 115%;
+    }
+
+    .footerCenterContainer{
+        padding: 0 10% 3% 10%;
+    }
+
+}

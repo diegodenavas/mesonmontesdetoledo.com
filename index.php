@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meson Montes de Toledo</title>
     
-    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/reset.css">
-    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/general.css">
-    <link rel="stylesheet" href="/mesonmontesdetoledo.com/public/css/index.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/app/public/css/reset.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/app/public/css/general.css">
+    <link rel="stylesheet" href="/mesonmontesdetoledo.com/app/public/css/index.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <script src="/mesonmontesdetoledo.com/public/js/gallery.js"></script>
+    <script src="/mesonmontesdetoledo.com/app/public/js/gallery.js"></script>
 
-    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/config/global.php"); ?>
+    <?php require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/src/config/global.php"); ?>
 </head>
 <body>
     <?php require_once(ROOT . "/app/src/includes/header.php"); ?>
@@ -33,7 +33,7 @@
         if (count($eventsList) > 0) {
             echo 
             "<div id='eventImgContainer'>
-                <img src='/mesonmontesdetoledo.com/public/images/events/".$eventsList[0]->getImgRoot()."' id='eventImg'>
+                <img src='/mesonmontesdetoledo.com/app/public/images/events/".$eventsList[0]->getImgRoot()."' id='eventImg'>
             </div>";
         }
         ?>
@@ -46,23 +46,23 @@
                 <a href="/mesonmontesdetoledo.com/contacto"><p class='paragraphSectionA'>Donde estamos</p></a>
             </div>
             <div class="gallery" id="gallery1img">
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
             </div>
         </div>
 
         <div class="opinions">
-            <img src="/mesonmontesdetoledo.com/public/images/webIcons/comment.png" alt="opinions">
+            <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/comment.png" alt="opinions">
             <div class='commentsContainer'>
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/puntuacion.png" alt="punctuation">
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/puntuacion.png" alt="punctuation">
                 <p>"Estupendo restaurante para una comida en buena compañía"</p>
             </div>
         </div>
 
         <div class="sectionContainer" id='sectionContainer2'>
             <div class="gallery" id="gallery2img">
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
             </div>
             <div class="paragraphSectionContainer">
                 <p>Especialistas en carne de venado, de ternera, y vaca
@@ -72,9 +72,9 @@
         </div>
 
         <div class="opinions">
-            <img src="/mesonmontesdetoledo.com/public/images/webIcons/comment.png" alt="opinions">
+            <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/comment.png" alt="opinions">
             <div class='commentsContainer'>
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/puntuacion.png" alt="punctuation">
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/puntuacion.png" alt="punctuation">
                 <p>"Supera todas las expectativas"</p>
             </div>
         </div>
@@ -85,8 +85,8 @@
                 <a href="/mesonmontesdetoledo.com/horario"><p class='paragraphSectionA'>Horario</p></a>
             </div>
             <div class="gallery" id="gallery3img">
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
-                <img src="/mesonmontesdetoledo.com/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/leftArrow.png" alt="preview image" class='leftArrowGallery'>
+                <img src="/mesonmontesdetoledo.com/app/public/images/webIcons/rightArrow.png" alt="next image" class='rightArrowGallery'>
             </div>
         </div>
     </section>

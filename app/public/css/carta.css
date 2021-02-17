@@ -1,0 +1,81 @@
+#menuRestaurantComplete{
+    width: 87%;
+    margin: auto;
+    padding-bottom: 15%;
+}
+
+.categoryContainer{
+    border-bottom :#707070 1px solid;
+    padding: 0 2%;
+}
+
+.categoryTitle{
+    display: flex;
+    font-weight: bold;
+    font-family: 'Handlee', cursive;
+    padding: 5% 0;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+.categoryCenterContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.menuCategoryIcon{
+    width: 15px;
+    height: 15px;
+    padding-right: 2%;
+}
+
+.menuCategoryArrowIcon{
+    width: 12px;
+    height: 12px;
+}
+
+.platesContainer{
+    padding-bottom: 5%;
+    font-family: 'Josefin Slab', serif;
+    display: none;
+}
+
+.plate{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 5%;
+    line-height : 110%;
+}
+
+.platePrice{
+    width: 15%;
+    text-align: right;
+}
+
+
+
+/*MEDIAS QUERIES*/
+
+@media (min-width: 600px) {
+
+    #menuRestaurantComplete{
+        width: 60%;
+    }
+
+    .categoryTitle{
+        font-size: 1.7em;
+    }
+
+    .menuCategoryIcon{
+        width: 20px;
+        height: 20px;
+    }
+
+    .platesContainer{
+        font-size: 1.5em;
+    }
+
+}
