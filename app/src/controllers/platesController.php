@@ -10,7 +10,8 @@
             foreach ($plateCategoriesList as $plateCategory) 
             {
                 $plate = new Plate();
-                $resulsetPlate = $plate->getBy("category", $plateCategory->getId());
+                $idCategory = $plateCategory->getId();
+                $resulsetPlate = $plate->getByQuery("SELECT * FROM plate WHERE category = $idCategory ORDER BY importance ASC");
                 $platesList = $plate->getObject($resulsetPlate);
 
                 echo
@@ -27,8 +28,13 @@
 
                         foreach ($platesList as $plate) {
                             echo
-                            "<div class='plate'>
-                                    <p class='plateName'>" . $plate->getName() . "</p>";
+                            "<div class='plate'>";
+                                    if($plate->getIsTitle() == '0'){
+                                        echo "<p class='plateName'>" . $plate->getName() . "</p>";
+                                    }else{
+                                        echo "<p class='plateName plateNameTitle'>" . $plate->getName() . "</p>";
+                                    }
+                                    
                                     if ($plate->getPrice() != 0) {
                                         echo "<p class='platePrice'>" . $plate->getPrice() . "€</p>";
                                     }

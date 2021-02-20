@@ -32,6 +32,22 @@ table{
     text-align: left;
 }
 
+.recordsNameTitle{
+    font-weight: bold;
+    color: blue;
+    text-decoration: underline;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2em;
+}
+
+#noChangePosition, #lastPlace{
+    background-color: rgb(255, 235, 119);
+}
+
+#noChangePosition{
+    display: none;
+}
+
 
 
 /*MEDIAS QUERIES*/

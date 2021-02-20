@@ -55,6 +55,13 @@
     text-align: right;
 }
 
+.plateNameTitle{
+    font-family: 'Josefin Slab', serif;
+    font-weight: 900;
+    font-size: 1em;
+    text-decoration: underline;
+}
+
 
 
 /*MEDIAS QUERIES*/

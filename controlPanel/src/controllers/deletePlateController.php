@@ -8,8 +8,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/mesonmontesdetoledo.com/app/src/confi
 require_once(ROOT . "app/src/models/Plate.php");
 
 $id = (int)$_POST["inputIdPlate"];
+$importance = (int)$_POST["importance1"];
 
 $plate = new Plate();
-$resulset = $plate->deleteById($id);
+$resulset = $plate->deletePlateWithPosition($id, $importance);
 
 header("Location: /mesonmontesdetoledo.com/controlPanel/src/views/plates.php");

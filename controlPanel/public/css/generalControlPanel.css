@@ -250,7 +250,7 @@ table td, table th{
     text-align: center;
 }
 
-#formCenterContainer input[type='text']{
+#formCenterContainer input[type='text'], #formCenterContainer select{
     margin: auto;
     width: 100%;
     margin: 2% 0 10% 0;
@@ -292,6 +292,10 @@ table td, table th{
     text-align: right;
     padding: 10%;
     cursor: pointer;
+}
+
+input[type='radio']{
+    display: inline;
 }
 
 

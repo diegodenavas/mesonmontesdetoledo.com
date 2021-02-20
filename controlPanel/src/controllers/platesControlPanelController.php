@@ -12,7 +12,7 @@ $countCategory=0;
 
 foreach ($plateCategoriesList as $plateCategory) {        
     $plate = new Plate();
-    $resulsetPlate = $plate->getBy("category", $plateCategory->getId());
+    $resulsetPlate = $plate->getByQuery("SELECT * FROM plate WHERE category=".$plateCategory->getId()." ORDER BY importance ASC");
     $platesList = $plate->getObject($resulsetPlate);
 
     echo 
@@ -35,13 +35,22 @@ foreach ($plateCategoriesList as $plateCategory) {
 
         echo 
         "<tr class='records' >
-            <td class='recordsId' id='recordId".$count."'>" . $plate->getId() . "</td>
-            <td class='recordsName' id='recordName".$count."'>" . $plate->getName() . "</td>
-            <td class='recordsPrice' id='recordPrice".$count."'>" . $plate->getPrice() . "€</td>
+            <td class='recordsId' id='recordId".$count."'>" . $plate->getId() . "</td>";
+
+            if($plate->getIsTitle() == '1'){
+                echo "<td class='recordsName recordsNameTitle' id='recordName".$count."'>" . $plate->getName() . "</td>";
+            }else{
+                echo "<td class='recordsName' id='recordName".$count."'>" . $plate->getName() . "</td>";
+            }
+
+            echo
+            "<td class='recordsPrice' id='recordPrice".$count."'>" . $plate->getPrice() . "€</td>
             <input type='hidden' value='".$plate->getId()."' id='plateId".$count."' class='plateId'>
             <input type='hidden' value='".$plate->getName()."' id='plateName".$count."' class='plateName'>
             <input type='hidden' value='".$plate->getPrice()."' id='platePrice".$count."' class='platePrice'>
             <input type='hidden' value='".$plate->getPlateCategory()->getName()."' id='plateCategory".$count."' class='plateCategory'>
+            <input type='hidden' value='".$plate->getImportance()."' id='plateImportance".$count."' class='plateImportance'>
+            <input type='hidden' value='".$plate->getIsTitle()."' id='plateIsTitle".$count."' class='plateIsTitle'>
             <td class='recordIconsContainer'>
                 <img src='/mesonmontesdetoledo.com/app/public/images/webIcons/lapiz.png' class='recordsIcons editIcon'>
                 <img src='/mesonmontesdetoledo.com/app/public/images/webIcons/delete.png' class='recordsIcons deleteIcon'>
