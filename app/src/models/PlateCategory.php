@@ -5,20 +5,21 @@ require_once(ROOT . "app/src/core/IResulsetToObject.php");
 
 class PlateCategory extends ModelCore implements IResulsetToObject
 { 
-    private $id, $name, $iconRoot, $importance;
+    private $id, $name, $iconRoot, $importance, $turn;
     
     public function __construct()
     {
         parent::__construct(get_class($this));
     }
 
-    public static function setPlateCategoryWhithAllProperties(int $id, string $name, string $iconRoot, int $importance){
+    public static function setPlateCategoryWhithAllProperties(int $id, string $name, string $iconRoot, int $importance, string $turn){
         $plateCategory = new PlateCategory();
 
         $plateCategory->setId($id);
         $plateCategory->setName($name);
         $plateCategory->setIconRoot($iconRoot);
         $plateCategory->setImportance($importance);
+        $plateCategory->setTurn($turn);
 
         return $plateCategory;
     }
@@ -28,7 +29,7 @@ class PlateCategory extends ModelCore implements IResulsetToObject
         $plateCategories = array();
 
         foreach ($resulset as $row) {
-            array_push($plateCategories, PlateCategory::setPlateCategoryWhithAllProperties($row[0], $row[1], $row[2], $row[3]));
+            array_push($plateCategories, PlateCategory::setPlateCategoryWhithAllProperties($row[0], $row[1], $row[2], $row[3], $row[4]));
         }
 
         return $plateCategories;
@@ -39,10 +40,10 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     {
         $this->setConnection();
 
-        $sql = "INSERT INTO $this->dbTable(name, iconRoot, importance) VALUES(?, ?, ?)";
+        $sql = "INSERT INTO $this->dbTable(name, iconRoot, importance, turn) VALUES(?, ?, ?, ?)";
         
         $statement = $this->connection->prepare($sql);
-        $response = $statement->execute(array($values[0], $values[1], $values[2]));
+        $response = $statement->execute(array($values[0], $values[1], $values[2], $values[3]));
 
         if($response == true){
             $statement = null;
@@ -59,9 +60,9 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     {
         $this->setConnection();
 
-        $sql = "UPDATE $this->dbTable SET name = ?, iconRoot = ? WHERE id = ?";
+        $sql = "UPDATE $this->dbTable SET name = ?, iconRoot = ?, turn = ? WHERE id = ?";
         $statement = $this->connection->prepare($sql);
-        $response = $statement->execute(array($values[0], $values[1], $id));
+        $response = $statement->execute(array($values[0], $values[1], $values[2], $id));
 
         if($response == true){
             $statement = null;
@@ -75,7 +76,7 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     }
 
 
-    public function addCategoryWithPosition(string $name, string $icon, int $importance){
+    public function addCategoryWithPosition(string $name, string $icon, int $importance, string $turn){
         $this->setConnection();
         $pdoConnection = $this->getConnection();
 
@@ -83,7 +84,7 @@ class PlateCategory extends ModelCore implements IResulsetToObject
             $pdoConnection->beginTransaction();
 
             $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance");
-            $pdoConnection->exec("INSERT INTO platecategory(name, iconRoot, importance) VALUES('$name', '$icon', $importance)");
+            $pdoConnection->exec("INSERT INTO platecategory(name, iconRoot, importance, turn) VALUES('$name', '$icon', $importance, '$turn')");
             $response = $pdoConnection->commit();
         }catch(Exception $e){
             $pdoConnection->rollBack();
@@ -118,31 +119,26 @@ class PlateCategory extends ModelCore implements IResulsetToObject
     }
 
 
-    public function updateCategoryWithPosition(int $id, string $name, string $icon, int $importance1, int $importance2){
+    public function updateCategoryWithPosition(int $id, string $name, string $icon, int $importance1, int $importance2, string $turn){
         $this->setConnection();
         $pdoConnection = $this->getConnection();
 
         try{
             if($importance1 < $importance2){
-                echo "entra aqui 1";
-
                 $pdoConnection->beginTransaction();
                 $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance2");
-                $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon', importance=$importance2 WHERE id = $id");
+                $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon', importance=$importance2, turn='$turn' WHERE id = $id");
                 $pdoConnection->exec("UPDATE platecategory SET importance=importance-1 WHERE importance > $importance1");
                 $pdoConnection->commit();
             }
             else if($importance1 > $importance2){
-                echo "entra aqui 2";
-
                 $pdoConnection->beginTransaction();
                 $pdoConnection->exec("UPDATE platecategory SET importance=importance+1 WHERE importance >= $importance2");
-                $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon', importance=$importance2 WHERE id = $id");
+                $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon', importance=$importance2, turn='$turn' WHERE id = $id");
                 $pdoConnection->exec("UPDATE platecategory SET importance=importance-1 WHERE importance > $importance1");
                 $pdoConnection->commit(); 
             }
             else{
-                echo "entra aqui 3";
                 $pdoConnection->exec("UPDATE platecategory SET name='$name', iconRoot='$icon' WHERE id = $id");
             }
         }catch(Exception $e){
@@ -189,6 +185,15 @@ class PlateCategory extends ModelCore implements IResulsetToObject
 
     public function getImportance(){
         return $this->importance;
+    }
+
+
+    public function setTurn(string $turn){
+        $this->turn = $turn;
+    }
+
+    public function getTurn(){
+        return $this->turn;
     }
 
 }

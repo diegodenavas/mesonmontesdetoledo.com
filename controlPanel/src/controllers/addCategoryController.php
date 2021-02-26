@@ -11,6 +11,7 @@ $id = $_POST["inputIdCategory"];
 $name = $_POST["inputNameCategory"];
 $icon = $_POST["inputIconCategory"];
 $importance = $_POST['inputImportanceCategory'];
+$turn = $_POST['inputTurn'];
 
 $plateCategory = new PlateCategory();
 
@@ -21,11 +22,11 @@ if($importance == "lastPlace"){
 
     $auxImportance = $plateCategoryList[0]->getImportance();
 
-    $plateCategory->addCategory(array($name, $icon, $auxImportance+1));
+    $plateCategory->addCategory(array($name, $icon, $auxImportance+1, $turn));
 
     $response = true;
 }else{
-    $response = $plateCategory->addCategoryWithPosition($name, $icon, (int)$importance);
+    $response = $plateCategory->addCategoryWithPosition($name, $icon, (int)$importance, $turn);
 }
 
 if($response) header("Location: /mesonmontesdetoledo.com/controlPanel/src/views/categories.php");

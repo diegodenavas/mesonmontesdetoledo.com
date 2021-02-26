@@ -36,6 +36,7 @@ foreach ($plateCategoriesList as $plateCategory) {
         <input type='hidden' value='".$plateCategory->getName()."' id='categoryName".$count."' name='categoryName".$count."' class='categoryName'>
         <input type='hidden' value='".$plateCategory->getIconRoot()."' id='categoryIconRoot".$count."' name='categoryIconRoot".$count."' class='categoryIcon'>
         <input type='hidden' value='".$plateCategory->getImportance()."' id='categoryImportance".$count."' name='categoryImportance".$count."' class='categoryImportance'>
+        <input type='hidden' value='".$plateCategory->getTurn()."' id='categoryTurn".$count."' name='categoryTurn".$count."' class='categoryTurn'>
      </tr>";
     
     $count++;

@@ -10,7 +10,7 @@
             <label for="inputNameCategory">Nombre de la categoría
                 <input type='text' value='' id='inputNameCategory' name='inputNameCategory' required>
             </label>
-            <p>Icono</p>
+            <label>Icono</label>
             <img src="" alt="" id='imgFormIcon'>
             <span id=selectIcon>Seleccionar icono</span>
 
@@ -43,6 +43,19 @@
                 <option class='importanceOption' value='0' id='lastPlace' selected>ÚLTIMA POSICIÓN</option>
             </select>
 
+            <label for="inputIsTitle">¿En que turno desea que aparezca?</label>
+            <div class='radioContainer'>
+                <input type="radio" name='inputTurn' id='inputIsLunch' class='radioTurn' value='comida'>
+                <p class='radioInputP'>Comida</p>
+            </div>
+            <div class='radioContainer'>
+                <input type="radio" name='inputTurn' id='inputIsDinner' class='radioTurn' value='cena'>
+                <p class='radioInputP'>Cena</p>
+            </div>
+            <div class='radioContainer'>
+                <input type="radio" name='inputTurn' id='inputIsLunchAndDinner' class='radioTurn' value='comida y cena' checked>
+                <p class='radioInputP'>Comida y cena</p>
+            </div>
         </div>
 
         <input type='hidden' value='' id='inputIdCategory' name='inputIdCategory'>

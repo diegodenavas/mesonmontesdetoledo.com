@@ -13,11 +13,12 @@ $name = $_POST["inputNameCategory"];
 $icon = $_POST["inputIconCategory"];
 $importance1 = (int)$_POST["importance1"];
 $importance2 = (int)$_POST["inputImportanceCategory"];
+$turn = $_POST['inputTurn'];
 
 $plateCategory = new PlateCategory();
 
 if($importance2 == -1){
-    $plateCategory->updateById($id, array($name, $icon));
+    $plateCategory->updateById($id, array($name, $icon, $turn));
     header("Location: /mesonmontesdetoledo.com/controlPanel/src/views/categories.php");
 }else{
     if($importance2 == 0){
@@ -27,7 +28,7 @@ if($importance2 == -1){
     }
     
     try{
-        $plateCategory->updateCategoryWithPosition($id, $name, $icon, $importance1, $importance2);
+        $plateCategory->updateCategoryWithPosition($id, $name, $icon, $importance1, $importance2, $turn);
         header("Location: /mesonmontesdetoledo.com/controlPanel/src/views/categories.php");
     }catch(PdoExecuteFailException $e){
         echo $e->getMessage();

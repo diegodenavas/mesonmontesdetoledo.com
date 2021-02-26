@@ -18,6 +18,7 @@ window.onload = function() {
         modalWindow.fadeIn(150);
         $("#recordFormCategory").attr("action", $("#recordFormCategory").attr("action") + "addCategoryController.php");
         $("#inputSubmitCategories").css( "background-color", "rgb(0, 228, 0)");
+        $("#inputIsLunchAndDinner").attr("checked", "");
     });
 
     selectIcon.click(function() {
@@ -60,14 +61,22 @@ window.onload = function() {
         let name = $(this).parent().siblings(".categoryName").attr("value");
         let icon = $(this).parent().siblings(".categoryIcon").attr("value");
         let importance = $(this).parent().siblings(".categoryImportance").attr("value");
+        let turn = $(this).parent().siblings(".categoryTurn").attr("value");
+
+        $("#recordFormCategory").attr("action", $("#recordFormCategory").attr("action") + "editCategoryController.php");
+
         $("#noChangePosition").attr("selected", "");
         $("#noChangePosition").show();
         $("#lastPlace").removeAttr("selected");
+
         $("#importance1").val(importance);
-        $("#recordFormCategory").attr("action", $("#recordFormCategory").attr("action") + "editCategoryController.php");
         $("#inputNameCategory").val(name);
         $("#inputIdCategory").val(id);
         $("#inputIconCategory").val(icon);
+
+        $("#inputIsLunchAndDinner").removeAttr("checked");
+        $(".radioTurn[value='"+turn+"']").attr("checked", "");
+
         $("#imgFormIcon").attr("src", "/mesonmontesdetoledo.com/app/public/images/platesIcons/" + icon);
         $("#inputSubmitCategories").val("Actualizar");
         scrollDisabled();
@@ -95,6 +104,7 @@ window.onload = function() {
         selectIconContainer.hide();
         $("#noChangePosition").hide();
         $("#noChangePosition").removeAttr("selected");
+        $(".radioTurn").removeAttr("checked");
         $("#lastPlace").attr("selected", "");
         $("#imgFormIcon").attr("src", "");
         $("#imgFormIcon").attr("alt", "");
