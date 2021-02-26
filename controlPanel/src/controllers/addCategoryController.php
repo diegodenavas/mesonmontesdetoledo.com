@@ -10,13 +10,12 @@ require_once(ROOT . "app/src/models/PlateCategory.php");
 $id = $_POST["inputIdCategory"];
 $name = $_POST["inputNameCategory"];
 $icon = $_POST["inputIconCategory"];
-$importance = $_POST['inputImportanceCategory'];
+$importance = (int)$_POST['inputImportanceCategory'];
 $turn = $_POST['inputTurn'];
 
 $plateCategory = new PlateCategory();
 
-
-if($importance == "lastPlace"){
+if($importance == 0){
     $resulset = $plateCategory->getByQuery("SELECT * FROM platecategory WHERE importance=(SELECT MAX(importance) FROM platecategory)");
     $plateCategoryList = $plateCategory->getObject($resulset);
 

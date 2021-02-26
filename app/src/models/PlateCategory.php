@@ -72,7 +72,6 @@ class PlateCategory extends ModelCore implements IResulsetToObject
             $this->connection = null;
             throw new PdoExecuteFailException();
         }
-
     }
 
 
@@ -95,7 +94,6 @@ class PlateCategory extends ModelCore implements IResulsetToObject
         $this->connection = null;
 
         return $response;
-
     }
 
 

@@ -20,7 +20,7 @@ $plateCategoriesList = $plateCategory->getObject($resulsetPlateCategory);
 
 $plate = new Plate();
 
-if($important == "lastPlace"){
+if($important == 0){
     $resulset = $plate->getByQuery("SELECT * FROM plate WHERE importance=(SELECT MAX(importance) FROM plate)");
     $plateList = $plate->getObject($resulset);
 

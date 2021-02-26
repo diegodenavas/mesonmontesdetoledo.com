@@ -4,7 +4,7 @@ require_once(ROOT . "app/src/models/Plate.php");
 require_once(ROOT . "app/src/models/PlateCategory.php");
 
 $plateCategory = new PlateCategory();
-$resulsetPlateCategory = $plateCategory->getAll();
+$resulsetPlateCategory = $plateCategory->getByQuery("SELECT * FROM platecategory ORDER BY importance ASC");
 $plateCategoriesList = $plateCategory->getObject($resulsetPlateCategory);
 
 $count=0;
